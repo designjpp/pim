@@ -1,0 +1,77 @@
+{% macro attribute(value, label, translate = false, translationKeyPrefix = '') %}
+
+    {% if(value) %}
+        <dl class="item-property col-6 col-md-3 print-col-3">
+            <dt>{{ label | trans }}</dt>
+
+            {% if(translate) %}
+                <dd>{{ (translationKeyPrefix ~ value) | lower | trans }}</dd>
+            {% else %}
+                <dd>{{ value }}</dd>
+            {% endif %}
+
+        </dl>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro bike(values, label) %}
+     <h4>{{ label }}</h4>
+
+    {% if(values) %}
+        {% for value in values %}
+            {% if value.manufacturer %}
+                {% for manufacturer in value.manufacturer %}
+                    {{manufacturer.name}}
+                {% endfor %}
+            {% endif %}
+            - {{value.model}} - {{value.name}}
+
+            {% if value.spec %}
+                {% for key, item in value.spec.items %}
+                    {% set groupDefinition = pimcore_object_classificationstore_group(key) %}
+                    {% set storedata = value.spec %}
+                    {% set languages = ['default'] %}
+
+                    {% if groupDefinition is not empty %}
+                        {% set keyGroupRelations = groupDefinition.getRelations() %}
+
+                        {% for keyGroupRelation in keyGroupRelations %}
+                            {% set keyDef = pimcore_object_classificationstore_get_field_definition_from_json(keyGroupRelation.getDefinition(), keyGroupRelation.getType())  %}
+                            {% if keyDef is not empty %}
+
+                                {% for language in languages %}
+                                    {% set keyData = storedata ? storedata.getLocalizedKeyValue(key, keyGroupRelation.getKeyId(), true, true) : null %}
+
+                                    {% set preview = keyDef.getVersionPreview(keyData) %}
+                                    <tr {% if loop.index is odd %}class="odd"{% endif %}>
+                                    
+                                        <td>{{keyDef.title}}</td>
+                                        {% if isImportPreview is not defined or isNew is not defined %}
+                                            <td>{{ preview | raw }}</td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+            {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endmacro %}
+
+{% macro geometry(value, label) %}
+
+    {% if(value) %}
+        <p>{{label}} - {{ value}}</p>
+        {# <dl>
+            <dt>{{ label }}</dt>
+            <dd>{{ value }}</dd>
+        </dl> #}
+    {% endif %}
+
+{% endmacro %}
