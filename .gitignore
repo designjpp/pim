@@ -57,3 +57,7 @@ nbproject
 /tools/
 /website/
 .temp
+/var/tmp
+/var/log
+/var/recyclebin
+/public/var/
