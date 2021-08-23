@@ -29,6 +29,6 @@ class SupportsStrategy implements WorkflowSupportStrategyInterface
         //     }
         // }
 
-        return [];
+        return false;
     }
 }

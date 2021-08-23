@@ -1,9 +1,9 @@
-<?php 
+<?php
 
-/** 
-Fields Summary: 
+/**
+Fields Summary:
 - text [input]
-*/ 
+*/
 
 
 return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
@@ -75,6 +75,54 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => true,
              'visibleSearch' => false,
+             'forbiddenNames' => 
+            array (
+              0 => 'id',
+              1 => 'key',
+              2 => 'path',
+              3 => 'type',
+              4 => 'index',
+              5 => 'classname',
+              6 => 'creationdate',
+              7 => 'userowner',
+              8 => 'value',
+              9 => 'class',
+              10 => 'list',
+              11 => 'fullpath',
+              12 => 'childs',
+              13 => 'values',
+              14 => 'cachetag',
+              15 => 'cachetags',
+              16 => 'parent',
+              17 => 'published',
+              18 => 'valuefromparent',
+              19 => 'userpermissions',
+              20 => 'dependencies',
+              21 => 'modificationdate',
+              22 => 'usermodification',
+              23 => 'byid',
+              24 => 'bypath',
+              25 => 'data',
+              26 => 'versions',
+              27 => 'properties',
+              28 => 'permissions',
+              29 => 'permissionsforuser',
+              30 => 'childamount',
+              31 => 'apipluginbroker',
+              32 => 'resource',
+              33 => 'parentClass',
+              34 => 'definition',
+              35 => 'locked',
+              36 => 'language',
+              37 => 'omitmandatorycheck',
+              38 => 'idpath',
+              39 => 'object',
+              40 => 'fieldname',
+              41 => 'property',
+              42 => 'parentid',
+              43 => 'children',
+              44 => 'scheduledtasks',
+            ),
              'blockedVarsForExport' => 
             array (
             ),

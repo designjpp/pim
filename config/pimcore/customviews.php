@@ -1,104 +1,324 @@
 <?php
-
-return [
+ return [
     "views" => [
         [
-            "treetype" => "object",
-            "name" => "Cars",
-            "condition" => NULL,
-            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/automotive.svg",
             "id" => 1,
-            "rootfolder" => "/Product Data/Cars",
-            "showroot" => FALSE,
-            "classes" => "CAR",
+            "treetype" => "object",
+            "name" => "Bikes",
+            "condition" => NULL,
+            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/about.svg",
+            "rootfolder" => "/Produtos/Bicicletas",
+            "showroot" => false,
+            "classes" => [
+                "CAR" => NULL
+            ],
             "position" => "left",
             "sort" => "3",
-            "expanded" => TRUE
+            "expanded" => true,
+            "treeContextMenu" => [
+                "object" => [
+                    "items" => [
+                        "add" => true,
+                        "addFolder" => true,
+                        "importCsv" => true,
+                        "cut" => true,
+                        "copy" => true,
+                        "paste" => true,
+                        "delete" => true,
+                        "rename" => true,
+                        "reload" => true,
+                        "publish" => true,
+                        "unpublish" => true,
+                        "searchAndMove" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "changeChildrenSortBy" => true
+                    ]
+                ]
+            ]
         ],
         [
+            "id" => 2,
             "treetype" => "object",
-            "name" => "Accessories",
+            "name" => "Acessórios",
             "condition" => NULL,
             "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-product.svg",
-            "id" => 2,
-            "rootfolder" => "/Product Data/Accessories",
-            "showroot" => FALSE,
-            "classes" => "AP",
+            "rootfolder" => "/Produtos/Acessórios",
+            "showroot" => false,
+            "classes" => [
+                "AP" => NULL
+            ],
             "position" => "left",
             "sort" => "4",
-            "expanded" => TRUE
+            "expanded" => true,
+            "treeContextMenu" => [
+                "object" => [
+                    "items" => [
+                        "add" => true,
+                        "addFolder" => true,
+                        "importCsv" => true,
+                        "cut" => true,
+                        "copy" => true,
+                        "paste" => true,
+                        "delete" => true,
+                        "rename" => true,
+                        "reload" => true,
+                        "publish" => true,
+                        "unpublish" => true,
+                        "searchAndMove" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "changeChildrenSortBy" => true
+                    ]
+                ]
+            ]
         ],
         [
+            "id" => 3,
             "treetype" => "object",
             "name" => "Orders",
             "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-cart.svg",
-            "id" => 3,
-            "showroot" => FALSE,
+            "showroot" => false,
             "rootfolder" => "/Shop/Orders",
-            "classes" => "",
+            "classes" => [
+                "" => NULL
+            ],
             "position" => "left",
             "sort" => "10",
-            "expanded" => TRUE
+            "expanded" => true,
+            "treeContextMenu" => [
+                "object" => [
+                    "items" => [
+                        "add" => true,
+                        "addFolder" => true,
+                        "importCsv" => true,
+                        "cut" => true,
+                        "copy" => true,
+                        "paste" => true,
+                        "delete" => true,
+                        "rename" => true,
+                        "reload" => true,
+                        "publish" => true,
+                        "unpublish" => true,
+                        "searchAndMove" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "changeChildrenSortBy" => true
+                    ]
+                ]
+            ]
         ],
         [
-            "treetype" => "object",
-            "name" => "Categories",
-            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-category.svg",
             "id" => 4,
+            "treetype" => "object",
+            "name" => "Categorias",
+            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-category.svg",
             "showroot" => false,
-            "rootfolder" => "/Product Data/Categories",
-            "classes" => "CA",
+            "rootfolder" => "/Produtos/Categorias",
+            "classes" => [
+                "CA" => NULL
+            ],
             "position" => "left",
             "sort" => "5",
-            "expanded" => TRUE
+            "expanded" => true,
+            "treeContextMenu" => [
+                "object" => [
+                    "items" => [
+                        "add" => true,
+                        "addFolder" => true,
+                        "importCsv" => true,
+                        "cut" => true,
+                        "copy" => true,
+                        "paste" => true,
+                        "delete" => true,
+                        "rename" => true,
+                        "reload" => true,
+                        "publish" => true,
+                        "unpublish" => true,
+                        "searchAndMove" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "changeChildrenSortBy" => true
+                    ]
+                ]
+            ]
         ],
         [
-            "treetype" => "object",
-            "name" => "Product Attributes",
-            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-setting.svg",
             "id" => 5,
-            "showroot" => FALSE,
-            "rootfolder" => "/Product Data",
-            "classes" => "BS,MA",
+            "treetype" => "object",
+            "name" => "Componentes",
+            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-setting.svg",
+            "showroot" => false,
+            "rootfolder" => "/Produtos/Componentes",
+            "classes" => [
+                "BS" => NULL,
+                "MA" => NULL
+            ],
             "position" => "left",
             "sort" => "6",
-            "expanded" => TRUE,
-            "where" => "(o_path LIKE '/Product Data/Manufacturer/%' OR o_key = 'Manufacturer' OR o_path LIKE '/Product Data/Body-Styles/%' OR o_key = 'Body-Styles')"
+            "expanded" => true,
+            "where" => "",
+            "treeContextMenu" => [
+                "object" => [
+                    "items" => [
+                        "add" => true,
+                        "addFolder" => true,
+                        "importCsv" => true,
+                        "cut" => true,
+                        "copy" => true,
+                        "paste" => true,
+                        "delete" => true,
+                        "rename" => true,
+                        "reload" => true,
+                        "publish" => true,
+                        "unpublish" => true,
+                        "searchAndMove" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "changeChildrenSortBy" => true
+                    ]
+                ]
+            ]
         ],
         [
+            "id" => 7,
             "treetype" => "object",
             "name" => "Customers",
             "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/businessman.svg",
-            "id" => 7,
-            "showroot" => FALSE,
+            "showroot" => false,
             "rootfolder" => "/Customer Management/customers",
-            "classes" => "CU",
+            "classes" => [
+                "CU" => NULL
+            ],
             "position" => "left",
             "sort" => "6",
-            "expanded" => TRUE
+            "expanded" => true
         ],
         [
+            "id" => 8,
             "treetype" => "object",
             "name" => "Customer Segments",
             "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pie_chart.svg",
-            "id" => 8,
-            "showroot" => FALSE,
+            "showroot" => false,
             "rootfolder" => "/Customer Management/segments",
-            "classes" => "1,2,3",
+            "classes" => [
+                1 => NULL,
+                2 => NULL,
+                3 => NULL
+            ],
             "position" => "left",
             "sort" => "6",
-            "expanded" => TRUE
+            "expanded" => true,
+            "treeContextMenu" => [
+                "object" => [
+                    "items" => [
+                        "add" => true,
+                        "addFolder" => true,
+                        "importCsv" => true,
+                        "cut" => true,
+                        "copy" => true,
+                        "paste" => true,
+                        "delete" => true,
+                        "rename" => true,
+                        "reload" => true,
+                        "publish" => true,
+                        "unpublish" => true,
+                        "searchAndMove" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "changeChildrenSortBy" => true
+                    ]
+                ]
+            ]
         ],
         [
-            "treetype" => "document",
-            "name" => "Katalog",
-            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-print.svg",
             "id" => 6,
-            "showroot" => FALSE,
+            "treetype" => "document",
+            "name" => "Catalogos",
+            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/pimcore-main-icon-print.svg",
+            "showroot" => false,
             "rootfolder" => "/print",
             "position" => "left",
             "sort" => "5",
-            "expanded" => FALSE
+            "expanded" => false,
+            "treeContextMenu" => [
+                "document" => [
+                    "items" => [
+                        "add" => true,
+                        "addSnippet" => true,
+                        "addLink" => true,
+                        "addEmail" => true,
+                        "addNewsletter" => true,
+                        "addHardlink" => true,
+                        "addFolder" => true,
+                        "addPrintPage" => true,
+                        "paste" => true,
+                        "pasteCut" => true,
+                        "copy" => true,
+                        "cut" => true,
+                        "rename" => true,
+                        "unpublish" => true,
+                        "publish" => true,
+                        "delete" => true,
+                        "open" => true,
+                        "convert" => true,
+                        "searchAndMove" => true,
+                        "useAsSite" => true,
+                        "editSite" => true,
+                        "removeSite" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "reload" => true
+                    ]
+                ]
+            ]
+        ],
+        [
+            "id" => "f27ddde5-cd3f-62c2-31f4-fc8506802ef4",
+            "name" => "Vesturarios",
+            "treetype" => "object",
+            "position" => "left",
+            "rootfolder" => "/Produtos/Vestuario",
+            "showroot" => false,
+            "sort" => 6,
+            "treeContextMenu" => [
+                "object" => [
+                    "items" => [
+                        "add" => true,
+                        "addFolder" => true,
+                        "importCsv" => true,
+                        "cut" => true,
+                        "copy" => true,
+                        "paste" => true,
+                        "delete" => true,
+                        "rename" => true,
+                        "reload" => true,
+                        "publish" => true,
+                        "unpublish" => true,
+                        "searchAndMove" => true,
+                        "lock" => true,
+                        "unlock" => true,
+                        "lockAndPropagate" => true,
+                        "unlockAndPropagate" => true,
+                        "changeChildrenSortBy" => true
+                    ]
+                ]
+            ],
+            "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/cloth.svg"
         ]
     ]
 ];

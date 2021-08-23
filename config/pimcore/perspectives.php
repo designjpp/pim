@@ -1,31 +1,31 @@
 <?php
-
-return [
+ return [
     "default" => [
-        "iconCls" => "pimcore_nav_icon_perspective",
         "elementTree" => [
             [
                 "type" => "documents",
                 "position" => "left",
                 "expanded" => false,
                 "hidden" => false,
-                "sort" => -3
+                "sort" => 0
             ],
             [
                 "type" => "assets",
                 "position" => "left",
                 "expanded" => false,
                 "hidden" => false,
-                "sort" => -2
+                "sort" => 1
             ],
             [
                 "type" => "objects",
                 "position" => "left",
                 "expanded" => false,
                 "hidden" => false,
-                "sort" => -1
+                "sort" => 2
             ]
         ],
+        "iconCls" => "pimcore_nav_icon_perspective",
+        "icon" => NULL,
         "dashboards" => [
             "predefined" => [
                 "welcome" => [
@@ -34,42 +34,211 @@ return [
                             [
                                 "id" => 1,
                                 "type" => "pimcore.layout.portlets.modificationStatistic",
-                                "config" => null
+                                "config" => NULL
                             ],
                             [
                                 "id" => 2,
                                 "type" => "pimcore.layout.portlets.modifiedAssets",
-                                "config" => null
-                            ],
+                                "config" => NULL
+                            ]
                         ],
                         [
                             [
                                 "id" => 3,
                                 "type" => "pimcore.layout.portlets.modifiedObjects",
-                                "config" => null
+                                "config" => NULL
                             ],
                             [
                                 "id" => 4,
                                 "type" => "pimcore.layout.portlets.modifiedDocuments",
-                                "config" => null
+                                "config" => NULL
                             ]
                         ]
-                    ],
                     ]
                 ]
             ]
+        ]
     ],
-
     "PIM" => [
+        "elementTree" => [
+            [
+                "type" => "customview",
+                "id" => 1,
+                "hidden" => false,
+                "position" => "left",
+                "sort" => 0,
+                "treeContextMenu" => [
+
+                ]
+            ],
+            [
+                "type" => "customview",
+                "id" => 2,
+                "hidden" => false,
+                "position" => "left",
+                "sort" => 1,
+                "treeContextMenu" => [
+
+                ]
+            ],
+            [
+                "type" => "documents",
+                "position" => "left",
+                "expanded" => false,
+                "hidden" => true,
+                "sort" => 2,
+                "treeContextMenu" => [
+                    "document" => [
+                        "items" => [
+                            "add" => true,
+                            "addSnippet" => true,
+                            "addLink" => true,
+                            "addEmail" => true,
+                            "addNewsletter" => true,
+                            "addHardlink" => true,
+                            "addFolder" => true,
+                            "addPrintPage" => true,
+                            "paste" => true,
+                            "pasteCut" => true,
+                            "copy" => true,
+                            "cut" => true,
+                            "rename" => true,
+                            "unpublish" => true,
+                            "publish" => true,
+                            "delete" => true,
+                            "open" => true,
+                            "convert" => true,
+                            "searchAndMove" => true,
+                            "useAsSite" => true,
+                            "editSite" => true,
+                            "removeSite" => true,
+                            "lock" => true,
+                            "unlock" => true,
+                            "lockAndPropagate" => true,
+                            "unlockAndPropagate" => true,
+                            "reload" => true
+                        ]
+                    ]
+                ]
+            ],
+            [
+                "type" => "objects",
+                "position" => "left",
+                "expanded" => false,
+                "hidden" => true,
+                "sort" => 3,
+                "treeContextMenu" => [
+                    "object" => [
+                        "items" => [
+                            "add" => true,
+                            "addFolder" => true,
+                            "importCsv" => true,
+                            "cut" => true,
+                            "copy" => true,
+                            "paste" => true,
+                            "delete" => true,
+                            "rename" => true,
+                            "reload" => true,
+                            "publish" => true,
+                            "unpublish" => true,
+                            "searchAndMove" => true,
+                            "lock" => true,
+                            "unlock" => true,
+                            "lockAndPropagate" => true,
+                            "unlockAndPropagate" => true,
+                            "changeChildrenSortBy" => true
+                        ]
+                    ]
+                ]
+            ],
+            [
+                "type" => "customview",
+                "id" => 4,
+                "hidden" => false,
+                "position" => "left",
+                "sort" => 4,
+                "treeContextMenu" => [
+
+                ]
+            ],
+            [
+                "type" => "customview",
+                "id" => 5,
+                "hidden" => false,
+                "position" => "left",
+                "sort" => 5,
+                "treeContextMenu" => [
+
+                ]
+            ],
+            [
+                "type" => "assets",
+                "position" => "left",
+                "expanded" => false,
+                "hidden" => false,
+                "sort" => 6
+            ]
+        ],
         "iconCls" => "pimcore_nav_icon_object",
+        "icon" => NULL,
         "toolbar" => [
-            "file" => 1
-            ,
+            "file" => [
+                "hidden" => false,
+                "items" => [
+                    "perspectives" => true,
+                    "dashboards" => true,
+                    "openDocument" => true,
+                    "openAsset" => true,
+                    "openObject" => true,
+                    "searchReplace" => true,
+                    "schedule" => true,
+                    "seemode" => true,
+                    "closeAll" => true,
+                    "help" => true,
+                    "about" => true
+                ]
+            ],
             "extras" => [
-                "hidden" => true
+                "hidden" => true,
+                "items" => [
+                    "glossary" => true,
+                    "redirects" => true,
+                    "translations" => true,
+                    "recyclebin" => true,
+                    "plugins" => true,
+                    "notesEvents" => true,
+                    "applicationlog" => true,
+                    "gdpr_data_extractor" => true,
+                    "emails" => true,
+                    "maintenance" => true,
+                    "systemtools" => [
+                        "hidden" => false,
+                        "items" => [
+                            "phpinfo" => true,
+                            "opcache" => true,
+                            "requirements" => true,
+                            "serverinfo" => true,
+                            "database" => true,
+                            "fileexplorer" => true
+                        ]
+                    ]
+                ]
             ],
             "marketing" => [
-                "hidden" => true
+                "hidden" => true,
+                "items" => [
+                    "reports" => true,
+                    "tagmanagement" => true,
+                    "targeting" => true,
+                    "seo" => [
+                        "hidden" => false,
+                        "items" => [
+                            "documents" => true,
+                            "robots" => true,
+                            "httperrors" => true
+                        ]
+                    ]
+                ]
             ],
             "settings" => [
                 "items" => [
@@ -81,77 +250,98 @@ return [
                     "thumbnails" => false,
                     "adminTranslations" => false,
                     "website" => false,
-                    "users" => false,
-                    "cache" => false
-                ]
+                    "users" => [
+                        "hidden" => true,
+                        "items" => [
+                            "users" => true,
+                            "roles" => true
+                        ]
+                    ],
+                    "cache" => [
+                        "hidden" => true,
+                        "items" => [
+                            "clearAll" => true,
+                            "clearData" => true,
+                            "clearSymfony" => true,
+                            "clearOutput" => true,
+                            "clearTemp" => true
+                        ]
+                    ],
+                    "customReports" => true,
+                    "marketingReports" => true,
+                    "web2print" => true,
+                    "objects" => [
+                        "hidden" => false,
+                        "items" => [
+                            "classes" => true,
+                            "fieldcollections" => true,
+                            "objectbricks" => true,
+                            "quantityValue" => true,
+                            "classificationstore" => true,
+                            "bulkExport" => true,
+                            "bulkImport" => true
+                        ]
+                    ],
+                    "tagConfiguration" => true,
+                    "perspectiveEditor" => true
+                ],
+                "hidden" => false
             ],
             "search" => [
                 "items" => [
                     "documents" => false,
-                    "esBackendSearch" => false
-                ]
+                    "esBackendSearch" => false,
+                    "quickSearch" => true,
+                    "assets" => true,
+                    "objects" => true
+                ],
+                "hidden" => false
             ],
             "ecommerce" => false
-        ],
+        ]
+    ],
+    "DAM" => [
         "elementTree" => [
             [
                 "type" => "documents",
                 "position" => "left",
                 "expanded" => false,
                 "hidden" => true,
-                "sort" => -3
+                "sort" => 0
+            ],
+            [
+                "type" => "assets",
+                "position" => "left",
+                "expanded" => false,
+                "hidden" => false,
+                "sort" => 1
             ],
             [
                 "type" => "objects",
                 "position" => "left",
                 "expanded" => false,
                 "hidden" => true,
-                "sort" => -1
-            ],
-            [
-                "type" => "customview",
-                "id" => 1,
-                "hidden" => false,
-                "position" => "left",
-                "sort" => -5
-            ],
-            [
-                "type" => "customview",
-                "id" => 2,
-                "hidden" => false,
-                "position" => "left",
-                "sort" => -4
-            ],
-
-            [
-                "type" => "customview",
-                "id" => 4,
-                "hidden" => false,
-                "position" => "right",
-                "sort" => 1
-            ],
-            [
-                "type" => "customview",
-                "id" => 5,
-                "hidden" => false,
-                "position" => "right",
                 "sort" => 2
             ],
             [
-                "type" => "assets",
-                "position" => "right",
-                "expanded" => false,
-                "hidden" => false,
-                "sort" => 3
+                "type" => "customview",
+                "name" => "Products",
+                "hidden" => "true",
+                "sort" => 3,
+                "position" => "left"
             ],
+            [
+                "type" => "customview",
+                "name" => "Orders",
+                "hidden" => "true",
+                "sort" => 4,
+                "position" => "left"
+            ]
         ],
-    ],
-
-    "DAM" => [
         "iconCls" => "pimcore_nav_icon_asset",
+        "icon" => NULL,
         "toolbar" => [
-            "file" => 1
-            ,
+            "file" => 1,
             "extras" => [
                 "hidden" => true
             ],
@@ -179,89 +369,143 @@ return [
                 ]
             ],
             "ecommerce" => false
-        ],
-        "elementTree" => [
-            [
-                "type" => "documents",
-                "position" => "left",
-                "expanded" => false,
-                "hidden" => true,
-                "sort" => -3
-            ],
-            [
-                "type" => "assets",
-                "position" => "left",
-                "expanded" => false,
-                "hidden" => false,
-                "sort" => -2
-            ],
-            [
-                "type" => "objects",
-                "position" => "left",
-                "expanded" => false,
-                "hidden" => true,
-                "sort" => -1
-            ],
-            [
-                "type" => "customview",
-                "name" => "Products",
-                "hidden" => "true",
-            ],
-            [
-                "type" => "customview",
-                "name" => "Orders",
-                "hidden" => "true",
-            ]
-        ],
+        ]
     ],
-
     "CMS" => [
-        "iconCls" => "pimcore_nav_icon_document",
         "elementTree" => [
             [
                 "type" => "documents",
                 "position" => "left",
                 "expanded" => false,
                 "hidden" => false,
-                "sort" => -3
+                "sort" => 0,
+                "treeContextMenu" => [
+                    "document" => [
+                        "items" => [
+                            "add" => true,
+                            "addSnippet" => true,
+                            "addLink" => true,
+                            "addEmail" => true,
+                            "addNewsletter" => true,
+                            "addHardlink" => true,
+                            "addFolder" => true,
+                            "addPrintPage" => true,
+                            "paste" => true,
+                            "pasteCut" => true,
+                            "copy" => true,
+                            "cut" => true,
+                            "rename" => true,
+                            "unpublish" => true,
+                            "publish" => true,
+                            "delete" => true,
+                            "open" => true,
+                            "convert" => true,
+                            "searchAndMove" => true,
+                            "useAsSite" => true,
+                            "editSite" => true,
+                            "removeSite" => true,
+                            "lock" => true,
+                            "unlock" => true,
+                            "lockAndPropagate" => true,
+                            "unlockAndPropagate" => true,
+                            "reload" => true
+                        ]
+                    ]
+                ]
+            ],
+            [
+                "type" => "customview",
+                "name" => "Products",
+                "hidden" => "true",
+                "sort" => 1,
+                "position" => "left",
+                "treeContextMenu" => [
+
+                ],
+                "id" => 1
+            ],
+            [
+                "type" => "customview",
+                "name" => "Orders",
+                "hidden" => "true",
+                "sort" => 2,
+                "position" => "left",
+                "treeContextMenu" => [
+
+                ],
+                "id" => 4
             ],
             [
                 "type" => "assets",
                 "position" => "right",
                 "expanded" => false,
                 "hidden" => false,
-                "sort" => -2
+                "sort" => 0,
+                "treeContextMenu" => [
+                    "asset" => [
+                        "items" => [
+                            "add" => [
+                                "hidden" => false,
+                                "items" => [
+                                    "upload" => true,
+                                    "uploadCompatibility" => true,
+                                    "uploadZip" => true,
+                                    "importFromServer" => true,
+                                    "uploadFromUrl" => true
+                                ]
+                            ],
+                            "addFolder" => true,
+                            "rename" => true,
+                            "copy" => true,
+                            "cut" => true,
+                            "paste" => true,
+                            "pasteCut" => true,
+                            "delete" => true,
+                            "searchAndMove" => true,
+                            "lock" => true,
+                            "unlock" => true,
+                            "lockAndPropagate" => true,
+                            "unlockAndPropagate" => true,
+                            "reload" => true
+                        ]
+                    ]
+                ]
             ],
             [
                 "type" => "objects",
                 "position" => "right",
                 "expanded" => false,
                 "hidden" => false,
-                "sort" => -1
-            ],
-            [
-                "type" => "customview",
-                "name" => "Products",
-                "hidden" => "true",
-            ],
-            [
-                "type" => "customview",
-                "name" => "Orders",
-                "hidden" => "true",
+                "sort" => 1,
+                "treeContextMenu" => [
+                    "object" => [
+                        "items" => [
+                            "add" => true,
+                            "addFolder" => true,
+                            "importCsv" => true,
+                            "cut" => true,
+                            "copy" => true,
+                            "paste" => true,
+                            "delete" => true,
+                            "rename" => true,
+                            "reload" => true,
+                            "publish" => true,
+                            "unpublish" => true,
+                            "searchAndMove" => true,
+                            "lock" => true,
+                            "unlock" => true,
+                            "lockAndPropagate" => true,
+                            "unlockAndPropagate" => true,
+                            "changeChildrenSortBy" => true
+                        ]
+                    ]
+                ]
             ]
         ],
+        "iconCls" => "pimcore_nav_icon_document",
+        "icon" => NULL
     ],
-
     "Commerce" => [
-        "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/shopping-cart.svg",
-        "toolbar" => [
-            "file" => true,
-            "extras" => false,
-            "marketing" => false,
-            "settings" => false,
-            "search" => true,
-            "ecommerce" => true
-        ],
         "elementTree" => [
             [
                 "type" => "customview",
@@ -269,7 +513,7 @@ return [
                 "position" => "left",
                 "expanded" => true,
                 "hidden" => false,
-                "sort" => -5
+                "sort" => 0
             ],
             [
                 "type" => "objects",
@@ -284,7 +528,7 @@ return [
                 "position" => "right",
                 "expanded" => true,
                 "hidden" => false,
-                "sort" => 1
+                "sort" => 0
             ],
             [
                 "type" => "customview",
@@ -308,11 +552,51 @@ return [
                 "hidden" => false,
                 "sort" => 3
             ]
-
+        ],
+        "iconCls" => NULL,
+        "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/shopping-cart.svg",
+        "toolbar" => [
+            "file" => true,
+            "extras" => false,
+            "marketing" => false,
+            "settings" => false,
+            "search" => true,
+            "ecommerce" => true
         ]
     ],
-
     "Catalog" => [
+        "elementTree" => [
+            [
+                "type" => "customview",
+                "id" => 6,
+                "position" => "left",
+                "expanded" => false,
+                "hidden" => false,
+                "sort" => 0,
+                "treeContextMenu" => [
+
+                ]
+            ],
+            [
+                "type" => "assets",
+                "position" => "right",
+                "expanded" => false,
+                "hidden" => false,
+                "sort" => 0
+            ],
+            [
+                "type" => "customview",
+                "id" => 1,
+                "position" => "right",
+                "expanded" => false,
+                "hidden" => false,
+                "sort" => 1,
+                "treeContextMenu" => [
+
+                ]
+            ]
+        ],
+        "iconCls" => NULL,
         "icon" => "/bundles/pimcoreadmin/img/flat-white-icons/book.svg",
         "toolbar" => [
             "file" => true,
@@ -321,34 +605,8 @@ return [
             "settings" => false,
             "search" => true,
             "ecommerce" => false
-        ],
-        "elementTree" => [
-            [
-                "type" => "customview",
-                "id" => 6,
-                "position" => "left",
-                "expanded" => false,
-                "hidden" => false,
-                "sort" => -3
-            ],
-            [
-                "type" => "assets",
-                "position" => "right",
-                "expanded" => false,
-                "hidden" => false,
-                "sort" => -2
-            ],
-            [
-                "type" => "customview",
-                "id" => 1,
-                "position" => "right",
-                "expanded" => false,
-                "hidden" => false,
-                "sort" => -1
-            ]
         ]
     ],
-
     "CDP" => [
         "elementTree" => [
             [

@@ -17,7 +17,7 @@ namespace App\Controller;
 
 use Pimcore\Model\DataObject;
 use App\Model\Product\AbstractProduct;
-use App\Model\Product\Car;
+// use App\Model\Product\Car;
 use Pimcore\Model\DataObject\AbstractObject;
 use Pimcore\Model\Document\Hardlink;
 use Pimcore\Web2Print\Processor;
