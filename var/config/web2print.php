@@ -17,7 +17,7 @@ return [
         "print-media-type" => "",
         "page-size" => "A4"
     ],
-    "wkhtml2pdfHostname" => "http://localhost/",
+    "wkhtml2pdfHostname" => "",
     "headlessChromeSettings" => "",
     "documentation" => "web2print_headlesschrome_puppeteer_documentation",
     "additions" => "There are two additional options: \"header\" and \"footer\". This options need a URL, which returns the header or footer template.",

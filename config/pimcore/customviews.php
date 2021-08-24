@@ -13,7 +13,7 @@
                 "CAR" => NULL
             ],
             "position" => "left",
-            "sort" => "3",
+            "sort" => 1,
             "expanded" => true,
             "treeContextMenu" => [
                 "object" => [
@@ -51,7 +51,7 @@
                 "AP" => NULL
             ],
             "position" => "left",
-            "sort" => "4",
+            "sort" => 2,
             "expanded" => true,
             "treeContextMenu" => [
                 "object" => [
@@ -163,7 +163,7 @@
                 "MA" => NULL
             ],
             "position" => "left",
-            "sort" => "6",
+            "sort" => 3,
             "expanded" => true,
             "where" => "",
             "treeContextMenu" => [
@@ -294,7 +294,7 @@
             "position" => "left",
             "rootfolder" => "/Produtos/Vestuario",
             "showroot" => false,
-            "sort" => 6,
+            "sort" => 4,
             "treeContextMenu" => [
                 "object" => [
                     "items" => [

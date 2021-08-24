@@ -13,6 +13,7 @@
   "minimum-stability": "dev",
   "require": {
     "ext-imagick": "*",
+    "doctrine/orm": "^2.9",
     "hwi/oauth-bundle": "^1.2.0",
     "php-http/guzzle7-adapter": "^0.1.1",
     "php-http/httplug-bundle": "^1",
@@ -21,7 +22,8 @@
     "pimcore/payment-provider-unzer": "^1.0",
     "pimcore/perspective-editor": "^1.0",
     "pimcore/pimcore": "^10.0",
-    "pimcore/web2print-tools-bundle": "^4.0"
+    "pimcore/web2print-tools-bundle": "^4.0",
+    "platformsh/config-reader": "^2.4"
   },
   "suggest": {
     "elasticsearch/elasticsearch": "Required for Elastic Search service"
