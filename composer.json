@@ -1,7 +1,7 @@
 {
-  "name": "pimcore/demo",
+  "name": "jpp/pimcore",
   "type": "project",
-  "description": "Demo Application for Pimcore 6",
+  "description": "Demo Application Pimcore for Grupo JPP",
   "license": "GPL-3.0-or-later",
   "config": {
     "optimize-autoloader": true,
@@ -12,6 +12,7 @@
   "prefer-stable": true,
   "minimum-stability": "dev",
   "require": {
+    "ext-imagick": "*",
     "hwi/oauth-bundle": "^1.2.0",
     "php-http/guzzle7-adapter": "^0.1.1",
     "php-http/httplug-bundle": "^1",
