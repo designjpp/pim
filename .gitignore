@@ -60,4 +60,4 @@ nbproject
 /var/tmp
 /var/log
 /var/recyclebin
-/public/var/
+/public/var/*
