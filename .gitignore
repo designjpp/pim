@@ -61,3 +61,8 @@ nbproject
 /var/log
 /var/recyclebin
 /public/var/*
+/public/var
+
+/var/tmp/*
+/var/log/*
+/var/cache
