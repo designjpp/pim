@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     "bundle" => [
@@ -9,6 +9,7 @@ return [
         "Pimcore\\Bundle\\DataHubBundle\\PimcoreDataHubBundle" => TRUE,
         "Pimcore\\Bundle\\ObjectMergerBundle\\ObjectMergerBundle" => TRUE,
         "Pimcore\\Bundle\\EcommerceFrameworkBundle\\PimcorePaymentProviderUnzerBundle" => TRUE,
-        "Pimcore\\Bundle\\PerspectiveEditorBundle\\PimcorePerspectiveEditorBundle" => TRUE
+        "Pimcore\\Bundle\\PerspectiveEditorBundle\\PimcorePerspectiveEditorBundle" => TRUE,
+        "Pimcore\\Bundle\\DataImporterBundle\\PimcoreDataImporterBundle" => TRUE
     ]
 ];

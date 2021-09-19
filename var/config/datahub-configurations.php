@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     "folders" => [
@@ -13188,6 +13188,78 @@ return [
                         "id" => "extModel836-1"
                     ]
                 ]
+            ]
+        ],
+        "teste" => [
+            "general" => [
+                "active" => TRUE,
+                "type" => "dataImporterDataObject",
+                "name" => "teste",
+                "description" => "",
+                "path" => NULL
+            ],
+            "loaderConfig" => [
+                "type" => "upload",
+                "settings" => [
+                    "uploadFilePath" => "teste/upload.import"
+                ]
+            ],
+            "interpreterConfig" => [
+                "type" => "csv",
+                "settings" => [
+                    "skipFirstRow" => TRUE,
+                    "delimiter" => ",",
+                    "enclosure" => "\"",
+                    "escape" => "\\"
+                ]
+            ],
+            "resolverConfig" => [
+                "elementType" => "dataObject",
+                "dataObjectClassId" => "VEST",
+                "loadingStrategy" => [
+                    "type" => "notLoad"
+                ],
+                "createLocationStrategy" => [
+                    "type" => "staticPath",
+                    "settings" => [
+                        "path" => "/"
+                    ]
+                ],
+                "locationUpdateStrategy" => [
+                    "type" => "noChange"
+                ],
+                "publishingStrategy" => [
+                    "type" => "noChangeUnpublishNew"
+                ]
+            ],
+            "processingConfig" => [
+                "executionType" => "parallel",
+                "idDataIndex" => ""
+            ],
+            "mappingConfig" => [
+                [
+                    "label" => "new column",
+                    "dataSourceIndex" => [
+                        "3"
+                    ],
+                    "transformationResultType" => "default",
+                    "dataTarget" => [
+                        "type" => "direct",
+                        "settings" => [
+                            "fieldName" => "name",
+                            "language" => ""
+                        ]
+                    ],
+                    "transformationPipeline" => [
+
+                    ]
+                ]
+            ],
+            "executionConfig" => [
+                "cronDefinition" => ""
+            ],
+            "workspaces" => [
+
             ]
         ]
     ]
