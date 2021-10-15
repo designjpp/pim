@@ -38,7 +38,7 @@ class Currency extends AbstractExtension
         ];
     }
 
-    public function format($value, $currency = 'EUR')
+    public function format($value, $currency = 'BRL')
     {
         return $this->formatter->formatCurrency($value, $currency);
     }
