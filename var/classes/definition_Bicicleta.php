@@ -73,7 +73,7 @@ Fields Summary:
 - typeTaxation [select]
 - ean [numeric]
 - stock [numeric]
-- price [numeric]
+- price [quantityValue]
 - productMeasure [objectbricks]
 - productPackaging [objectbricks]
 - wholesalePacking [objectbricks]
@@ -85,7 +85,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Bicicleta',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1633401535,
+   'modificationDate' => 1634699511,
    'userOwner' => 2,
    'userModification' => 1,
    'parentClass' => '',
@@ -6673,17 +6673,18 @@ Tudo que for adicionado aqui será adicionado ao item da galeria B2B. Somente im
                  'defaultValueGenerator' => '',
               )),
               4 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-                 'fieldtype' => 'numeric',
+              Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+                 'fieldtype' => 'quantityValue',
                  'width' => '',
+                 'unitWidth' => '',
                  'defaultValue' => NULL,
-                 'integer' => false,
-                 'unsigned' => false,
-                 'minValue' => 0,
-                 'maxValue' => NULL,
-                 'unique' => false,
-                 'decimalSize' => 10,
+                 'defaultUnit' => '12',
+                 'validUnits' => 
+                array (
+                  0 => '12',
+                ),
                  'decimalPrecision' => 2,
+                 'autoConvert' => false,
                  'name' => 'price',
                  'title' => 'Pre&ccedil;o ',
                  'tooltip' => '',
