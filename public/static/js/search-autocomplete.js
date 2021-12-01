@@ -1,7 +1,9 @@
 // autoComplete.js on type event emitter
-document.querySelector("#autoComplete").addEventListener("autoComplete", function(event) {
-    console.log(event.detail);
-});
+document
+    .querySelector("#autoComplete")
+    .addEventListener("autoComplete", function (event) {
+        console.log(event.detail);
+    });
 // The autoComplete.js Engine instance creator
 const autoCompletejs = new autoComplete({
     data: {
@@ -9,9 +11,11 @@ const autoCompletejs = new autoComplete({
             // User search query
             const query = document.querySelector("#autoComplete").value;
 
-            if(query) {
+            if (query) {
                 // Fetch External Data Source
-                const source = await fetch(`/en/search?autocomplete=true&term=${query}`);
+                const source = await fetch(
+                    `/en/search?autocomplete=true&term=${query}`
+                );
                 // Format data into JSON
                 const data = await source.json();
                 // Return Fetched data
@@ -21,7 +25,7 @@ const autoCompletejs = new autoComplete({
             }
         },
         key: ["product"],
-        cache: false
+        cache: false,
     },
     sort: (a, b) => {
         if (a.match < b.match) return -1;
@@ -41,7 +45,7 @@ const autoCompletejs = new autoComplete({
     maxResults: 7,
     resultsList: {
         render: true,
-        container: function(source) {
+        container: function (source) {
             source.setAttribute("id", "autoComplete_results_list");
             source.setAttribute("class", "d-none");
         },
@@ -50,25 +54,27 @@ const autoCompletejs = new autoComplete({
         element: "ul",
     },
     resultItem: {
-        content: function(data, source) {
+        content: function (data, source) {
             source.innerHTML = data.match;
         },
         element: "li",
     },
-    noResults: function() {
+    noResults: function () {
         const result = document.createElement("li");
         result.setAttribute("class", "no_result autoComplete_result");
         result.setAttribute("tabindex", "1");
         result.innerHTML = "No Results";
-        document.querySelector("#autoComplete_results_list").appendChild(result);
+        document
+            .querySelector("#autoComplete_results_list")
+            .appendChild(result);
     },
-    onSelection: function(feedback) {
+    onSelection: function (feedback) {
         const selection = feedback.selection.value.href;
         location.replace(selection);
     },
 });
 
 // On page load add class to input field
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     document.querySelector("#autoComplete").classList.add("out");
 });

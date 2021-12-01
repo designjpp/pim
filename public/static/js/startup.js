@@ -18,7 +18,7 @@ pimcore.plugin.extendadmin = Class.create(pimcore.plugin.admin, {
             object.data.general.o_type == "object"
         ) {
             object.toolbar.add({
-                text: t("print-pdf"),
+                text: t("Datasheet"),
                 iconCls: "pimcore_icon_pdf",
                 scale: "small",
                 handler: function () {
