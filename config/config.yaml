@@ -4,7 +4,7 @@ imports:
     - { resource: ecommerce/base-ecommerce.yaml }
     - { resource: cmf.yaml }
     - { resource: workflows.yaml }
-
+    - { resource: pimcore_data_hub_simple_rest.yaml }
 pimcore:
     # IMPORTANT Notice!
     # Following there are only some examples listed, for a full list of possible options, please run the following command:

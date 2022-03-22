@@ -1,5 +1,5 @@
 imports:
-#    - { resource: 'elastic-search.yaml' }
+    # - { resource: "elastic-search.yaml" }
 
 pimcore:
     models:
