@@ -10,6 +10,8 @@ return [
         "Pimcore\\Bundle\\ObjectMergerBundle\\ObjectMergerBundle" => TRUE,
         "Pimcore\\Bundle\\EcommerceFrameworkBundle\\PimcorePaymentProviderUnzerBundle" => TRUE,
         "Pimcore\\Bundle\\PerspectiveEditorBundle\\PimcorePerspectiveEditorBundle" => TRUE,
-        "Pimcore\\Bundle\\DataImporterBundle\\PimcoreDataImporterBundle" => TRUE
+        "Pimcore\\Bundle\\DataImporterBundle\\PimcoreDataImporterBundle" => TRUE,
+        "CIHub\\Bundle\\SimpleRESTAdapterBundle\\SimpleRESTAdapterBundle" => TRUE,
+        "CIHub\\Bundle\\PimcoreCIHubAdapterBundle\\PimcoreCIHubAdapterBundle" => TRUE
     ]
 ];
