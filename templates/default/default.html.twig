@@ -3,7 +3,67 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>PIM do Grupo JPP</title>
+      {% apply spaceless %}
+            {# add global stylesheets and scripts outside of any blocsk to add them to the helpers before any others assets are added #}
+            {# we use the view helper to have cache buster functionality #}
+            {# {% do pimcore_head_link().appendStylesheet('https://fonts.googleapis.com/css?family=Hind+Guntur:300,400,500,600,700&display=swap') %} #}
+            {# {% do pimcore_head_link().appendStylesheet('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',null,null,{integrity:"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",crossorigin:"anonymous"}) %}
+            {% do pimcore_head_link().appendStylesheet('https://use.fontawesome.com/releases/v5.9.0/css/all.css') %}
+            {% do pimcore_head_link().appendStylesheet(asset('static/lib/magnific/magnific.css'), 'screen') %}
+            {% do pimcore_head_link().appendStylesheet(asset('static/lib/autocompletejs/css/autoComplete.css'), 'screen') %}
+            {% do pimcore_head_link().appendStylesheet('https://use.fontawesome.com/releases/v5.7.0/css/all.css',null,null,{integrity:'sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ',crossorigin:'anonymous'}) %} #}
+            {% do pimcore_head_link().appendStylesheet(asset('static/css/global.css')) %}
+            {% if editmode %}
+                {% do pimcore_head_link().appendStylesheet(asset('static/css/editmode.css')) %}
+            {% endif %}
+            {# {% do pimcore_head_script().appendFile('https://code.jquery.com/jquery-3.3.1.slim.min.js',null,null,{ integrity:"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",crossorigin:"anonymous"}) %}
+            {% do pimcore_head_script().appendFile('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',null,null,{ integrity:"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1",crossorigin:"anonymous"}) %}
+            {% do pimcore_head_script().appendFile('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',null,null,{ integrity:"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",crossorigin:"anonymous"}) %} #}
+            {# {% do pimcore_head_script().appendFile(asset('static/lib/magnific/magnific.js')) %}
+            {% do pimcore_head_script().appendFile(asset('static/lib/autocompletejs/js/autoComplete.min.js')) %}
+            {% do pimcore_head_script().appendFile(asset('static/js/search-autocomplete.js')) %}
+            {% do pimcore_head_script().appendFile(asset('static/js/main.js')) %} #}
+            {% if not editmode %}
+                    {% do pimcore_head_script().appendFile(asset('static/js/frontend.js')) %}
+            {% endif %}
+
+            {% if not document is defined or not document %}
+                {% set document = pimcore_document(1) %}
+            {% endif %}
+
+            {% if document is instanceof('\\Pimcore\\Model\\Document\\Link') %}
+                {# @var document \Pimcore\Model\Document\Link #}
+                {% set document = document.getObject() %}
+            {% endif %}
+
+            {% if document.getTitle() is not empty %}
+                {% do pimcore_head_title().set(document.getTitle()) %}
+            {% endif %}
+
+            {% if document.getDescription() is not empty %}
+                {% do pimcore_head_meta().setDescription(document.getDescription()) %}
+            {% endif %}
+
+            {% do pimcore_head_title().append('Pimcore Demo') %}
+            {% do pimcore_head_title().setSeparator(' : ') %}
+            {% set isPortal = ((isPortal is defined) and isPortal) %}
+        {% endapply %}
+
+        {# we're using the deferred extension here to make sure this block is rendered after all helper calls #}
+        {% block layout_head_meta deferred %}
+            {{ pimcore_head_title() }}
+            {{ pimcore_head_meta() }}
+
+            {% if pimcore_placeholder('canonical').count() %}
+                <link rel="canonical" href="{{ pimcore_placeholder('canonical') }}"/>
+            {% endif %}
+
+        {% endblock %}
+
+        {% block head_stylesheets deferred %}
+            {{ pimcore_head_link() }}
+        {% endblock %}
+
 </head>
 
 <body>

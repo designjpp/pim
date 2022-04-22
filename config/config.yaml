@@ -1,10 +1,9 @@
 imports:
-    - { resource: services.yaml }
     - { resource: "local/" }
     - { resource: ecommerce/base-ecommerce.yaml }
     - { resource: cmf.yaml }
     - { resource: workflows.yaml }
-    - { resource: pimcore_data_hub_simple_rest.yaml }
+
 pimcore:
     # IMPORTANT Notice!
     # Following there are only some examples listed, for a full list of possible options, please run the following command:
@@ -19,6 +18,32 @@ pimcore:
         encoder_factories:
             Pimcore\Model\DataObject\Customer: cmf.security.user_password_encoder_factory
 
+    # sitemaps:
+    #     generators:
+    #         app_news:
+    #             enabled: true
+    #             priority: 50
+    #             generator_id: App\Sitemaps\NewsGenerator
+    #         app_cars:
+    #             enabled: true
+    #             priority: 49
+    #             generator_id: App\Sitemaps\ProductGenerator
+    #         app_category:
+    #             enabled: true
+    #             priority: 48
+    #             generator_id: App\Sitemaps\CategoryGenerator
+
+    #         # Pimcore ships a default document tree generator which is enabled by default
+    #         # but you can easily disable it here.
+    #         pimcore_documents:
+    #             enabled: true
+
+    # pimcore_admin:
+    #     admin_csp_header:
+    #         enabled: true
+    #         exclude_paths:
+    #             - "@^/admin/external_opcache@"
+
 #### TRANSLATIONS
 #    translations:
 #        case_insensitive: true
@@ -26,7 +51,6 @@ pimcore:
 #### FEATURE FLAGS
 #    flags:
 #        zend_date: true
-
 #### CLASS OVERRIDES EXAMPLES
 #    models:
 #        class_overrides:
