@@ -1,24 +1,13 @@
 <?php
 
-/**
-* Inheritance: no
-* Variants: no
-
-
-Fields Summary:
-- manufacturer [manyToManyObjectRelation]
-- model [input]
-- name [input]
-- spec [classificationstore]
-*/
-
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
+   'dao' => NULL,
    'id' => 'CM',
    'name' => 'CompMontagem',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1633400345,
+   'modificationDate' => 1651792733,
    'userOwner' => 1,
    'userModification' => 1,
    'parentClass' => '',
@@ -38,9 +27,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
   ),
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => 'pimcore_root',
      'type' => NULL,
      'region' => NULL,
@@ -52,13 +38,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -70,18 +53,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Text::__set_state(array(
-             'fieldtype' => 'text',
-             'html' => '<div class="alert alert-info">
-Não precisa colocar a marca antes do nome do produto, será adicionado no front.&nbsp;<div><ul><li>Marca&nbsp;</li><li>Modelo (por exemplo: Mt-200)</li><li>Nome de Série (por exemplo:&nbsp;Acera)</li>
-</ul></div>
-</div>',
-             'renderingClass' => '',
-             'renderingData' => '',
-             'border' => false,
              'name' => 'Layout',
              'type' => NULL,
              'region' => NULL,
@@ -93,36 +68,24 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'bodyStyle' => '',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
             ),
              'locked' => false,
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'text',
+             'html' => '<div class="alert alert-info">
+Não precisa colocar a marca antes do nome do produto, será adicionado no front.&nbsp;<div><ul><li>Marca&nbsp;</li><li>Modelo (por exemplo: Mt-200)</li><li>Nome de Série (por exemplo:&nbsp;Acera)</li>
+</ul></div>
+</div>',
+             'renderingClass' => '',
+             'renderingData' => '',
+             'border' => false,
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-             'fieldtype' => 'manyToManyObjectRelation',
-             'width' => 500,
-             'height' => '',
-             'maxItems' => 1,
-             'relationType' => true,
-             'visibleFields' => 'name',
-             'allowToCreateNewObject' => false,
-             'optimizedAdminLoading' => false,
-             'enableTextSelection' => false,
-             'visibleFieldDefinitions' => 
-            array (
-            ),
-             'classes' => 
-            array (
-              0 => 
-              array (
-                'classes' => 'Manufacturer',
-              ),
-            ),
-             'pathFormatterClass' => '',
              'name' => 'manufacturer',
              'title' => 'Fabricante',
              'tooltip' => '',
@@ -133,70 +96,35 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'manyToManyObjectRelation',
+             'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
-             'forbiddenNames' => 
-            array (
-              0 => 'id',
-              1 => 'key',
-              2 => 'path',
-              3 => 'type',
-              4 => 'index',
-              5 => 'classname',
-              6 => 'creationdate',
-              7 => 'userowner',
-              8 => 'value',
-              9 => 'class',
-              10 => 'list',
-              11 => 'fullpath',
-              12 => 'childs',
-              13 => 'values',
-              14 => 'cachetag',
-              15 => 'cachetags',
-              16 => 'parent',
-              17 => 'published',
-              18 => 'valuefromparent',
-              19 => 'userpermissions',
-              20 => 'dependencies',
-              21 => 'modificationdate',
-              22 => 'usermodification',
-              23 => 'byid',
-              24 => 'bypath',
-              25 => 'data',
-              26 => 'versions',
-              27 => 'properties',
-              28 => 'permissions',
-              29 => 'permissionsforuser',
-              30 => 'childamount',
-              31 => 'apipluginbroker',
-              32 => 'resource',
-              33 => 'parentClass',
-              34 => 'definition',
-              35 => 'locked',
-              36 => 'language',
-              37 => 'omitmandatorycheck',
-              38 => 'idpath',
-              39 => 'object',
-              40 => 'fieldname',
-              41 => 'property',
-              42 => 'parentid',
-              43 => 'children',
-              44 => 'scheduledtasks',
-            ),
              'blockedVarsForExport' => 
+            array (
+            ),
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'Manufacturer',
+              ),
+            ),
+             'pathFormatterClass' => '',
+             'width' => 500,
+             'height' => '',
+             'maxItems' => 1,
+             'visibleFields' => 'name',
+             'allowToCreateNewObject' => false,
+             'optimizedAdminLoading' => false,
+             'enableTextSelection' => false,
+             'visibleFieldDefinitions' => 
             array (
             ),
           )),
           2 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
-             'width' => '',
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'unique' => false,
-             'showCharCount' => false,
              'name' => 'model',
              'title' => 'Modelo',
              'tooltip' => '',
@@ -207,72 +135,27 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
-             'forbiddenNames' => 
-            array (
-              0 => 'id',
-              1 => 'key',
-              2 => 'path',
-              3 => 'type',
-              4 => 'index',
-              5 => 'classname',
-              6 => 'creationdate',
-              7 => 'userowner',
-              8 => 'value',
-              9 => 'class',
-              10 => 'list',
-              11 => 'fullpath',
-              12 => 'childs',
-              13 => 'values',
-              14 => 'cachetag',
-              15 => 'cachetags',
-              16 => 'parent',
-              17 => 'published',
-              18 => 'valuefromparent',
-              19 => 'userpermissions',
-              20 => 'dependencies',
-              21 => 'modificationdate',
-              22 => 'usermodification',
-              23 => 'byid',
-              24 => 'bypath',
-              25 => 'data',
-              26 => 'versions',
-              27 => 'properties',
-              28 => 'permissions',
-              29 => 'permissionsforuser',
-              30 => 'childamount',
-              31 => 'apipluginbroker',
-              32 => 'resource',
-              33 => 'parentClass',
-              34 => 'definition',
-              35 => 'locked',
-              36 => 'language',
-              37 => 'omitmandatorycheck',
-              38 => 'idpath',
-              39 => 'object',
-              40 => 'fieldname',
-              41 => 'property',
-              42 => 'parentid',
-              43 => 'children',
-              44 => 'scheduledtasks',
-            ),
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValueGenerator' => '',
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
              'width' => '',
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
              'unique' => false,
              'showCharCount' => false,
+             'defaultValueGenerator' => '',
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'name',
              'title' => 'Series',
              'tooltip' => '',
@@ -283,73 +166,50 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
-             'forbiddenNames' => 
-            array (
-              0 => 'id',
-              1 => 'key',
-              2 => 'path',
-              3 => 'type',
-              4 => 'index',
-              5 => 'classname',
-              6 => 'creationdate',
-              7 => 'userowner',
-              8 => 'value',
-              9 => 'class',
-              10 => 'list',
-              11 => 'fullpath',
-              12 => 'childs',
-              13 => 'values',
-              14 => 'cachetag',
-              15 => 'cachetags',
-              16 => 'parent',
-              17 => 'published',
-              18 => 'valuefromparent',
-              19 => 'userpermissions',
-              20 => 'dependencies',
-              21 => 'modificationdate',
-              22 => 'usermodification',
-              23 => 'byid',
-              24 => 'bypath',
-              25 => 'data',
-              26 => 'versions',
-              27 => 'properties',
-              28 => 'permissions',
-              29 => 'permissionsforuser',
-              30 => 'childamount',
-              31 => 'apipluginbroker',
-              32 => 'resource',
-              33 => 'parentClass',
-              34 => 'definition',
-              35 => 'locked',
-              36 => 'language',
-              37 => 'omitmandatorycheck',
-              38 => 'idpath',
-              39 => 'object',
-              40 => 'fieldname',
-              41 => 'property',
-              42 => 'parentid',
-              43 => 'children',
-              44 => 'scheduledtasks',
-            ),
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => '',
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => false,
+             'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
           4 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
+             'name' => 'spec',
+             'title' => 'Especifica&ccedil;&atilde;o',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
              'fieldtype' => 'classificationstore',
-             'childs' => 
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => true,
+             'visibleSearch' => true,
+             'blockedVarsForExport' => 
             array (
             ),
-             'name' => 'spec',
+             'children' => 
+            array (
+            ),
              'region' => NULL,
              'layout' => NULL,
-             'title' => 'Especifica&ccedil;&atilde;o',
              'width' => 0,
              'height' => 0,
              'maxTabs' => NULL,
@@ -371,75 +231,15 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'maxItems' => 0,
              'permissionView' => NULL,
              'permissionEdit' => NULL,
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => true,
-             'visibleSearch' => true,
-             'forbiddenNames' => 
-            array (
-              0 => 'id',
-              1 => 'key',
-              2 => 'path',
-              3 => 'type',
-              4 => 'index',
-              5 => 'classname',
-              6 => 'creationdate',
-              7 => 'userowner',
-              8 => 'value',
-              9 => 'class',
-              10 => 'list',
-              11 => 'fullpath',
-              12 => 'childs',
-              13 => 'values',
-              14 => 'cachetag',
-              15 => 'cachetags',
-              16 => 'parent',
-              17 => 'published',
-              18 => 'valuefromparent',
-              19 => 'userpermissions',
-              20 => 'dependencies',
-              21 => 'modificationdate',
-              22 => 'usermodification',
-              23 => 'byid',
-              24 => 'bypath',
-              25 => 'data',
-              26 => 'versions',
-              27 => 'properties',
-              28 => 'permissions',
-              29 => 'permissionsforuser',
-              30 => 'childamount',
-              31 => 'apipluginbroker',
-              32 => 'resource',
-              33 => 'parentClass',
-              34 => 'definition',
-              35 => 'locked',
-              36 => 'language',
-              37 => 'omitmandatorycheck',
-              38 => 'idpath',
-              39 => 'object',
-              40 => 'fieldname',
-              41 => 'property',
-              42 => 'parentid',
-              43 => 'children',
-              44 => 'scheduledtasks',
-            ),
-             'blockedVarsForExport' => 
-            array (
-            ),
           )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => NULL,
+         'border' => false,
          'icon' => '',
          'labelWidth' => 0,
          'labelAlign' => 'left',
@@ -449,6 +249,9 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',
@@ -495,8 +298,10 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
     ),
   ),
    'enableGridLocking' => false,
-   'dao' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

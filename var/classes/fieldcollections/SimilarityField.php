@@ -1,10 +1,4 @@
-<?php 
-
-/** 
-Fields Summary: 
-- field [indexFieldSelectionCombo]
-- weight [numeric]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
@@ -16,9 +10,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'group' => 'Filter Definition',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => NULL,
      'type' => NULL,
      'region' => NULL,
@@ -30,13 +21,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => '',
-         'border' => false,
          'name' => 'Layout',
          'type' => '',
          'region' => '',
@@ -48,14 +36,28 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => '',
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Bundle\EcommerceFrameworkBundle\CoreExtensions\ClassDefinition\IndexFieldSelectionCombo::__set_state(array(
+             'name' => 'field',
+             'title' => 'Field',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => '',
+             'datatype' => 'data',
              'fieldtype' => 'indexFieldSelectionCombo',
-             'specificPriceField' => false,
-             'showAllFields' => true,
-             'considerTenants' => true,
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'options' => 
             array (
               0 => 
@@ -160,37 +162,13 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'optionsProviderData' => NULL,
              'columnLength' => 190,
              'dynamicOptions' => false,
-             'name' => 'field',
-             'title' => 'Field',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => '',
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
              'defaultValueGenerator' => '',
+             'specificPriceField' => false,
+             'showAllFields' => true,
+             'considerTenants' => true,
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'fieldtype' => 'numeric',
-             'width' => 300,
-             'defaultValue' => 1,
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'unique' => NULL,
-             'decimalSize' => NULL,
-             'decimalPrecision' => NULL,
              'name' => 'weight',
              'title' => 'Weight',
              'tooltip' => '',
@@ -201,6 +179,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => '',
              'datatype' => 'data',
+             'fieldtype' => 'numeric',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -208,6 +187,15 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => 300,
+             'defaultValue' => 1,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => NULL,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'defaultValueGenerator' => '',
           )),
         ),
@@ -215,6 +203,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => '',
+         'border' => false,
          'icon' => NULL,
          'labelWidth' => 100,
          'labelAlign' => 'left',
@@ -224,6 +215,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',

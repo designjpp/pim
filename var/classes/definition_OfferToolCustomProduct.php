@@ -1,24 +1,13 @@
-<?php 
-
-/** 
-* Inheritance: no
-* Variants: no
-
-
-Fields Summary: 
-- OSproductNumber [input]
-- OSName [input]
-- productGroup [select]
-- price [numeric]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
+   'dao' => NULL,
    'id' => 'EF_OTCP',
    'name' => 'OfferToolCustomProduct',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1625782265,
+   'modificationDate' => 1651792734,
    'userOwner' => 0,
    'userModification' => 1,
    'parentClass' => '\\Pimcore\\Bundle\\EcommerceFrameworkBundle\\OfferTool\\AbstractOfferToolProduct',
@@ -38,9 +27,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
   ),
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => 'pimcore_root',
      'type' => NULL,
      'region' => NULL,
@@ -52,13 +38,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -70,15 +53,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Text::__set_state(array(
-             'fieldtype' => 'text',
-             'html' => '<b>OfferToolCustomProduct</b>s to be added into an offer. Used e.g. for additional material, service, ...<div>May be extended for specific use case.&nbsp;</div>',
-             'renderingClass' => NULL,
-             'renderingData' => NULL,
-             'border' => false,
              'name' => 'Layout',
              'type' => NULL,
              'region' => NULL,
@@ -90,23 +68,21 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'bodyStyle' => 'padding: 10px; background-color: #d9edf7; border-color: #bce8f1 !important; color: #31708f;',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
             ),
              'locked' => false,
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'text',
+             'html' => '<b>OfferToolCustomProduct</b>s to be added into an offer. Used e.g. for additional material, service, ...<div>May be extended for specific use case.&nbsp;</div>',
+             'renderingClass' => NULL,
+             'renderingData' => NULL,
+             'border' => false,
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
-             'width' => 400,
-             'defaultValue' => NULL,
-             'columnLength' => 255,
-             'regex' => '',
-             'unique' => NULL,
-             'showCharCount' => NULL,
              'name' => 'OSproductNumber',
              'title' => 'Product Number',
              'tooltip' => '',
@@ -117,6 +93,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -124,17 +101,19 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValueGenerator' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
              'width' => 400,
              'defaultValue' => NULL,
              'columnLength' => 255,
              'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
              'unique' => NULL,
              'showCharCount' => NULL,
+             'defaultValueGenerator' => '',
+          )),
+          2 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'OSName',
              'title' => 'Product Name',
              'tooltip' => '',
@@ -145,6 +124,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -152,11 +132,37 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => 400,
+             'defaultValue' => NULL,
+             'columnLength' => 255,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => NULL,
+             'showCharCount' => NULL,
              'defaultValueGenerator' => '',
           )),
           3 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+             'name' => 'productGroup',
+             'title' => 'Product Group',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
              'fieldtype' => 'select',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'options' => 
             array (
               0 => 
@@ -176,37 +182,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'optionsProviderData' => NULL,
              'columnLength' => 190,
              'dynamicOptions' => false,
-             'name' => 'productGroup',
-             'title' => 'Product Group',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
              'defaultValueGenerator' => '',
           )),
           4 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-             'fieldtype' => 'numeric',
-             'width' => 400,
-             'defaultValue' => NULL,
-             'integer' => false,
-             'unsigned' => false,
-             'minValue' => NULL,
-             'maxValue' => NULL,
-             'unique' => NULL,
-             'decimalSize' => 19,
-             'decimalPrecision' => 4,
              'name' => 'price',
              'title' => 'Price',
              'tooltip' => '',
@@ -217,6 +196,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'numeric',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -224,6 +204,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => 400,
+             'defaultValue' => NULL,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => NULL,
+             'decimalSize' => 19,
+             'decimalPrecision' => 4,
              'defaultValueGenerator' => '',
           )),
         ),
@@ -231,6 +220,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => NULL,
+         'border' => false,
          'icon' => NULL,
          'labelWidth' => 100,
          'labelAlign' => 'left',
@@ -240,6 +232,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',
@@ -277,8 +272,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     ),
   ),
    'enableGridLocking' => false,
-   'dao' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

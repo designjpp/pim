@@ -1,15 +1,7 @@
-<?php 
-
-/** 
-Fields Summary: 
-- longtext [textarea]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
-   'classDefinitions' => 
-  array (
-  ),
    'dao' => NULL,
    'key' => 'Desc',
    'parentClass' => '',
@@ -18,9 +10,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'group' => 'Spec',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => NULL,
      'type' => NULL,
      'region' => NULL,
@@ -32,13 +21,10 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -50,16 +36,10 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-             'fieldtype' => 'textarea',
-             'width' => '',
-             'height' => '',
-             'maxLength' => NULL,
-             'showCharCount' => false,
-             'excludeFromSearchIndex' => false,
              'name' => 'longtext',
              'title' => 'Texto longo',
              'tooltip' => '',
@@ -70,6 +50,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'textarea',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => true,
@@ -77,12 +58,20 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => '',
+             'height' => '',
+             'maxLength' => NULL,
+             'showCharCount' => false,
+             'excludeFromSearchIndex' => false,
           )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => NULL,
+         'border' => false,
          'icon' => '',
          'labelWidth' => 100,
          'labelAlign' => 'left',
@@ -92,12 +81,18 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
    'generateTypeDeclarations' => true,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'classDefinitions' => 
   array (
   ),
 ));

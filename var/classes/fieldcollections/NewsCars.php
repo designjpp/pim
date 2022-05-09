@@ -1,11 +1,4 @@
-<?php 
-
-/** 
-Fields Summary: 
-- localizedfields [localizedfields]
--- title [input]
-- relatedCars [manyToManyObjectRelation]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
@@ -17,9 +10,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'group' => 'News',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => NULL,
      'type' => NULL,
      'region' => NULL,
@@ -31,13 +21,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -49,22 +36,32 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Localizedfields::__set_state(array(
+             'name' => 'localizedfields',
+             'title' => '',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => NULL,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
              'fieldtype' => 'localizedfields',
-             'childs' => 
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => true,
+             'visibleSearch' => true,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'children' => 
             array (
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'fieldtype' => 'input',
-                 'width' => NULL,
-                 'defaultValue' => NULL,
-                 'columnLength' => 190,
-                 'regex' => '',
-                 'unique' => false,
-                 'showCharCount' => false,
                  'name' => 'title',
                  'title' => 'Title',
                  'tooltip' => '',
@@ -75,6 +72,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'input',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -82,13 +80,20 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'width' => NULL,
+                 'defaultValue' => NULL,
+                 'columnLength' => 190,
+                 'regex' => '',
+                 'regexFlags' => 
+                array (
+                ),
+                 'unique' => false,
+                 'showCharCount' => false,
                  'defaultValueGenerator' => '',
               )),
             ),
-             'name' => 'localizedfields',
              'region' => NULL,
              'layout' => NULL,
-             'title' => '',
              'width' => '',
              'height' => '',
              'maxTabs' => NULL,
@@ -102,45 +107,11 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'fieldDefinitionsCache' => NULL,
              'permissionView' => NULL,
              'permissionEdit' => NULL,
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => NULL,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => true,
-             'visibleSearch' => true,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'labelWidth' => NULL,
+             'labelWidth' => 0,
              'labelAlign' => 'left',
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-             'fieldtype' => 'manyToManyObjectRelation',
-             'width' => '',
-             'height' => '',
-             'maxItems' => '',
-             'relationType' => true,
-             'visibleFields' => 'id,key,name,manufacturer',
-             'allowToCreateNewObject' => true,
-             'optimizedAdminLoading' => false,
-             'visibleFieldDefinitions' => 
-            array (
-            ),
-             'classes' => 
-            array (
-              0 => 
-              array (
-                'classes' => 'Car',
-              ),
-            ),
-             'pathFormatterClass' => '',
              'name' => 'relatedCars',
              'title' => 'Related Cars',
              'tooltip' => '',
@@ -151,10 +122,30 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'manyToManyObjectRelation',
+             'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
              'blockedVarsForExport' => 
+            array (
+            ),
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'Car',
+              ),
+            ),
+             'pathFormatterClass' => '',
+             'width' => '',
+             'height' => '',
+             'maxItems' => '',
+             'visibleFields' => 'id,key,name,manufacturer',
+             'allowToCreateNewObject' => true,
+             'optimizedAdminLoading' => false,
+             'enableTextSelection' => false,
+             'visibleFieldDefinitions' => 
             array (
             ),
           )),
@@ -163,6 +154,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => NULL,
+         'border' => false,
          'icon' => '',
          'labelWidth' => 100,
          'labelAlign' => 'left',
@@ -172,6 +166,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',

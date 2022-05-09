@@ -1,16 +1,4 @@
-<?php 
-
-/** 
-Fields Summary: 
-- count [numeric]
-- prefix [input]
-- length [numeric]
-- characterType [select]
-- separator [input]
-- separatorCount [numeric]
-- allowOncePerCart [checkbox]
-- onlyTokenPerCart [checkbox]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
@@ -22,9 +10,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'group' => 'Voucher',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => NULL,
      'type' => NULL,
      'region' => NULL,
@@ -36,13 +21,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => '',
-         'border' => false,
          'name' => 'Layout',
          'type' => NULL,
          'region' => '',
@@ -54,15 +36,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Text::__set_state(array(
-             'fieldtype' => 'text',
-             'html' => 'Generate tokens based on a pattern with specific settings.&nbsp;',
-             'renderingClass' => NULL,
-             'renderingData' => NULL,
-             'border' => false,
              'name' => 'Layout',
              'type' => NULL,
              'region' => NULL,
@@ -74,17 +51,21 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'bodyStyle' => 'padding: 10px; background-color: #d9edf7; border-color: #bce8f1 !important; color: #31708f;',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
             ),
              'locked' => false,
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'text',
+             'html' => 'Generate tokens based on a pattern with specific settings.&nbsp;',
+             'renderingClass' => NULL,
+             'renderingData' => NULL,
+             'border' => false,
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
-             'fieldtype' => 'fieldset',
              'name' => 'general settings',
              'type' => NULL,
              'region' => '',
@@ -96,20 +77,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'bodyStyle' => '150',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-                 'fieldtype' => 'numeric',
-                 'width' => 400,
-                 'defaultValue' => NULL,
-                 'integer' => true,
-                 'unsigned' => true,
-                 'minValue' => 1,
-                 'maxValue' => NULL,
-                 'unique' => NULL,
-                 'decimalSize' => NULL,
-                 'decimalPrecision' => NULL,
                  'name' => 'count',
                  'title' => 'Token Count',
                  'tooltip' => '',
@@ -120,6 +91,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'numeric',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -127,17 +99,19 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'width' => 400,
+                 'defaultValue' => NULL,
+                 'integer' => true,
+                 'unsigned' => true,
+                 'minValue' => 1,
+                 'maxValue' => NULL,
+                 'unique' => NULL,
+                 'decimalSize' => NULL,
+                 'decimalPrecision' => NULL,
                  'defaultValueGenerator' => '',
               )),
               1 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'fieldtype' => 'input',
-                 'width' => 400,
-                 'defaultValue' => NULL,
-                 'columnLength' => 255,
-                 'regex' => '',
-                 'unique' => NULL,
-                 'showCharCount' => NULL,
                  'name' => 'prefix',
                  'title' => 'Prefix',
                  'tooltip' => '',
@@ -148,6 +122,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'input',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -155,20 +130,19 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'width' => 400,
+                 'defaultValue' => NULL,
+                 'columnLength' => 255,
+                 'regex' => '',
+                 'regexFlags' => 
+                array (
+                ),
+                 'unique' => NULL,
+                 'showCharCount' => NULL,
                  'defaultValueGenerator' => '',
               )),
               2 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-                 'fieldtype' => 'numeric',
-                 'width' => 400,
-                 'defaultValue' => NULL,
-                 'integer' => true,
-                 'unsigned' => true,
-                 'minValue' => 1,
-                 'maxValue' => NULL,
-                 'unique' => NULL,
-                 'decimalSize' => NULL,
-                 'decimalPrecision' => NULL,
                  'name' => 'length',
                  'title' => 'Length',
                  'tooltip' => '',
@@ -179,6 +153,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'numeric',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -186,11 +161,37 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'width' => 400,
+                 'defaultValue' => NULL,
+                 'integer' => true,
+                 'unsigned' => true,
+                 'minValue' => 1,
+                 'maxValue' => NULL,
+                 'unique' => NULL,
+                 'decimalSize' => NULL,
+                 'decimalPrecision' => NULL,
                  'defaultValueGenerator' => '',
               )),
               3 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+                 'name' => 'characterType',
+                 'title' => 'Character Type',
+                 'tooltip' => '',
+                 'mandatory' => true,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
                  'fieldtype' => 'select',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
                  'options' => 
                 array (
                   0 => 
@@ -215,23 +216,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'optionsProviderData' => NULL,
                  'columnLength' => 190,
                  'dynamicOptions' => false,
-                 'name' => 'characterType',
-                 'title' => 'Character Type',
-                 'tooltip' => '',
-                 'mandatory' => true,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
                  'defaultValueGenerator' => '',
               )),
             ),
@@ -239,12 +223,12 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'fieldset',
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
           2 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
-             'fieldtype' => 'fieldset',
              'name' => 'additionals',
              'type' => NULL,
              'region' => '',
@@ -256,17 +240,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'bodyStyle' => '',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'fieldtype' => 'input',
-                 'width' => 400,
-                 'defaultValue' => NULL,
-                 'columnLength' => 255,
-                 'regex' => '^[\\-|\\.|\\#|\\,|\\/|\\+\\_]{1}$',
-                 'unique' => NULL,
-                 'showCharCount' => NULL,
                  'name' => 'separator',
                  'title' => 'Separator',
                  'tooltip' => '',
@@ -277,6 +254,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'input',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -284,20 +262,19 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'width' => 400,
+                 'defaultValue' => NULL,
+                 'columnLength' => 255,
+                 'regex' => '^[\\-|\\.|\\#|\\,|\\/|\\+\\_]{1}$',
+                 'regexFlags' => 
+                array (
+                ),
+                 'unique' => NULL,
+                 'showCharCount' => NULL,
                  'defaultValueGenerator' => '',
               )),
               1 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
-                 'fieldtype' => 'numeric',
-                 'width' => 400,
-                 'defaultValue' => 4,
-                 'integer' => false,
-                 'unsigned' => true,
-                 'minValue' => 1,
-                 'maxValue' => NULL,
-                 'unique' => NULL,
-                 'decimalSize' => NULL,
-                 'decimalPrecision' => 0,
                  'name' => 'separatorCount',
                  'title' => 'Every x character ',
                  'tooltip' => '',
@@ -308,6 +285,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'numeric',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -315,12 +293,19 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'width' => 400,
+                 'defaultValue' => 4,
+                 'integer' => false,
+                 'unsigned' => true,
+                 'minValue' => 1,
+                 'maxValue' => NULL,
+                 'unique' => NULL,
+                 'decimalSize' => NULL,
+                 'decimalPrecision' => 0,
                  'defaultValueGenerator' => '',
               )),
               2 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-                 'fieldtype' => 'checkbox',
-                 'defaultValue' => 0,
                  'name' => 'allowOncePerCart',
                  'title' => 'Only allow one token of this type per cart',
                  'tooltip' => '',
@@ -331,6 +316,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'checkbox',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -338,12 +324,11 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'defaultValue' => 0,
                  'defaultValueGenerator' => '',
               )),
               3 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-                 'fieldtype' => 'checkbox',
-                 'defaultValue' => 0,
                  'name' => 'onlyTokenPerCart',
                  'title' => 'Only token of a cart',
                  'tooltip' => '',
@@ -354,6 +339,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'checkbox',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -361,6 +347,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
+                 'defaultValue' => 0,
                  'defaultValueGenerator' => '',
               )),
             ),
@@ -368,6 +355,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'fieldset',
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
@@ -376,6 +364,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => '',
+         'border' => false,
          'icon' => NULL,
          'labelWidth' => 100,
          'labelAlign' => 'left',
@@ -385,6 +376,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',

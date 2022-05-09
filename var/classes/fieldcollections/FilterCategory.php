@@ -1,14 +1,4 @@
-<?php 
-
-/** 
-Fields Summary: 
-- label [input]
-- preSelect [manyToOneRelation]
-- rootCategory [manyToOneRelation]
-- includeParentCategories [checkbox]
-- scriptPath [input]
-- availableCategories [manyToManyObjectRelation]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
@@ -20,9 +10,6 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
    'group' => 'FilterTypes',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => NULL,
      'type' => NULL,
      'region' => NULL,
@@ -34,13 +21,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => '',
-         'border' => false,
          'name' => 'Layout',
          'type' => '',
          'region' => '',
@@ -52,15 +36,10 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => '',
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Text::__set_state(array(
-             'fieldtype' => 'text',
-             'html' => '<div style="color: rgb(0, 0, 0); font-family: \'Open Sans\', \'Helvetica Neue\', helvetica, arial, verdana, sans-serif; font-size: 13px;"><b>Filter Category</b></div><div><font face="Open Sans, Helvetica Neue, helvetica, arial, verdana, sans-serif"><span style="font-size: 13px;">- RootCategory: can be used as root category when building up category tree.&nbsp;</span></font></div><div><font face="Open Sans, Helvetica Neue, helvetica, arial, verdana, sans-serif"><span style="font-size: 13px;">- Include SubCategories: when active, filter returns product with subcategories assigned too.</span></font></div>',
-             'renderingClass' => NULL,
-             'renderingData' => NULL,
-             'border' => false,
              'name' => 'Layout',
              'type' => NULL,
              'region' => NULL,
@@ -72,23 +51,21 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'bodyStyle' => 'padding: 10px; background-color: #d9edf7; border-color: #bce8f1 !important; color: #31708f;',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
             ),
              'locked' => false,
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'text',
+             'html' => '<div style="color: rgb(0, 0, 0); font-family: \'Open Sans\', \'Helvetica Neue\', helvetica, arial, verdana, sans-serif; font-size: 13px;"><b>Filter Category</b></div><div><font face="Open Sans, Helvetica Neue, helvetica, arial, verdana, sans-serif"><span style="font-size: 13px;">- RootCategory: can be used as root category when building up category tree.&nbsp;</span></font></div><div><font face="Open Sans, Helvetica Neue, helvetica, arial, verdana, sans-serif"><span style="font-size: 13px;">- Include SubCategories: when active, filter returns product with subcategories assigned too.</span></font></div>',
+             'renderingClass' => NULL,
+             'renderingData' => NULL,
+             'border' => false,
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
-             'width' => 400,
-             'defaultValue' => NULL,
-             'columnLength' => 255,
-             'regex' => '',
-             'unique' => NULL,
-             'showCharCount' => NULL,
              'name' => 'label',
              'title' => 'Label',
              'tooltip' => '',
@@ -99,6 +76,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => '',
              'datatype' => 'data',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -106,31 +84,19 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => 400,
+             'defaultValue' => NULL,
+             'columnLength' => 255,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => NULL,
+             'showCharCount' => NULL,
              'defaultValueGenerator' => '',
           )),
           2 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-             'fieldtype' => 'manyToOneRelation',
-             'width' => 400,
-             'assetUploadPath' => '',
-             'relationType' => true,
-             'objectsAllowed' => true,
-             'assetsAllowed' => false,
-             'assetTypes' => 
-            array (
-            ),
-             'documentsAllowed' => false,
-             'documentTypes' => 
-            array (
-            ),
-             'classes' => 
-            array (
-              0 => 
-              array (
-                'classes' => 'Category',
-              ),
-            ),
-             'pathFormatterClass' => '',
              'name' => 'preSelect',
              'title' => 'Pre Select',
              'tooltip' => '',
@@ -141,26 +107,12 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => '',
              'datatype' => 'data',
+             'fieldtype' => 'manyToOneRelation',
+             'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
              'blockedVarsForExport' => 
-            array (
-            ),
-          )),
-          3 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
-             'fieldtype' => 'manyToOneRelation',
-             'width' => 400,
-             'assetUploadPath' => '',
-             'relationType' => true,
-             'objectsAllowed' => true,
-             'assetsAllowed' => false,
-             'assetTypes' => 
-            array (
-            ),
-             'documentsAllowed' => false,
-             'documentTypes' => 
             array (
             ),
              'classes' => 
@@ -171,6 +123,20 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
               ),
             ),
              'pathFormatterClass' => '',
+             'width' => 400,
+             'assetUploadPath' => '',
+             'objectsAllowed' => true,
+             'assetsAllowed' => false,
+             'assetTypes' => 
+            array (
+            ),
+             'documentsAllowed' => false,
+             'documentTypes' => 
+            array (
+            ),
+          )),
+          3 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
              'name' => 'rootCategory',
              'title' => 'Root Category',
              'tooltip' => '',
@@ -181,17 +147,36 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'manyToOneRelation',
+             'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
              'blockedVarsForExport' => 
             array (
             ),
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'Category',
+              ),
+            ),
+             'pathFormatterClass' => '',
+             'width' => 400,
+             'assetUploadPath' => '',
+             'objectsAllowed' => true,
+             'assetsAllowed' => false,
+             'assetTypes' => 
+            array (
+            ),
+             'documentsAllowed' => false,
+             'documentTypes' => 
+            array (
+            ),
           )),
           4 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-             'fieldtype' => 'checkbox',
-             'defaultValue' => 0,
              'name' => 'includeParentCategories',
              'title' => 'Include SubCategories',
              'tooltip' => '',
@@ -202,6 +187,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => '',
              'datatype' => 'data',
+             'fieldtype' => 'checkbox',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -209,17 +195,11 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'defaultValue' => 0,
              'defaultValueGenerator' => '',
           )),
           5 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'fieldtype' => 'input',
-             'width' => 400,
-             'defaultValue' => NULL,
-             'columnLength' => 255,
-             'regex' => '',
-             'unique' => NULL,
-             'showCharCount' => NULL,
              'name' => 'scriptPath',
              'title' => 'Script Path',
              'tooltip' => '',
@@ -230,6 +210,7 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => '',
              'datatype' => 'data',
+             'fieldtype' => 'input',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -237,29 +218,19 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => 400,
+             'defaultValue' => NULL,
+             'columnLength' => 255,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => NULL,
+             'showCharCount' => NULL,
              'defaultValueGenerator' => '',
           )),
           6 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-             'fieldtype' => 'manyToManyObjectRelation',
-             'width' => '',
-             'height' => '',
-             'maxItems' => '',
-             'relationType' => true,
-             'visibleFields' => NULL,
-             'allowToCreateNewObject' => true,
-             'optimizedAdminLoading' => false,
-             'visibleFieldDefinitions' => 
-            array (
-            ),
-             'classes' => 
-            array (
-              0 => 
-              array (
-                'classes' => 'ProductCategory',
-              ),
-            ),
-             'pathFormatterClass' => NULL,
              'name' => 'availableCategories',
              'title' => 'Available Categories',
              'tooltip' => '',
@@ -270,10 +241,30 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
              'style' => '',
              'permissions' => '',
              'datatype' => 'data',
+             'fieldtype' => 'manyToManyObjectRelation',
+             'relationType' => true,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
              'blockedVarsForExport' => 
+            array (
+            ),
+             'classes' => 
+            array (
+              0 => 
+              array (
+                'classes' => 'ProductCategory',
+              ),
+            ),
+             'pathFormatterClass' => NULL,
+             'width' => '',
+             'height' => '',
+             'maxItems' => '',
+             'visibleFields' => NULL,
+             'allowToCreateNewObject' => true,
+             'optimizedAdminLoading' => false,
+             'enableTextSelection' => false,
+             'visibleFieldDefinitions' => 
             array (
             ),
           )),
@@ -282,6 +273,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => '',
+         'border' => false,
          'icon' => '',
          'labelWidth' => 100,
          'labelAlign' => 'left',
@@ -291,6 +285,9 @@ return Pimcore\Model\DataObject\Fieldcollection\Definition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',

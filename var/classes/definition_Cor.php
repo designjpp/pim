@@ -1,21 +1,13 @@
-<?php 
-
-/** 
-* Inheritance: yes
-* Variants: no
-
-
-Fields Summary: 
-- cor [objectbricks]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
+   'dao' => NULL,
    'id' => 'COR',
    'name' => 'Cor',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1625782264,
+   'modificationDate' => 1651792733,
    'userOwner' => 1,
    'userModification' => 1,
    'parentClass' => '',
@@ -35,9 +27,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
   ),
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => 'pimcore_root',
      'type' => NULL,
      'region' => NULL,
@@ -49,13 +38,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -67,19 +53,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'fieldtype' => 'objectbricks',
-             'allowedTypes' => 
-            array (
-              0 => 'Cor1',
-              1 => 'Cor2',
-              2 => 'Cor3',
-            ),
-             'maxItems' => '',
-             'border' => false,
              'name' => 'cor',
              'title' => 'cor',
              'tooltip' => '',
@@ -90,6 +67,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'objectbricks',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -97,14 +75,25 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'allowedTypes' => 
+            array (
+              0 => 'Cor1',
+              1 => 'Cor2',
+              2 => 'Cor3',
+            ),
+             'maxItems' => '',
+             'border' => false,
           )),
         ),
          'locked' => false,
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => NULL,
+         'border' => false,
          'icon' => '',
-         'labelWidth' => '',
+         'labelWidth' => 0,
          'labelAlign' => 'left',
       )),
     ),
@@ -112,6 +101,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',
@@ -149,8 +141,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     ),
   ),
    'enableGridLocking' => false,
-   'dao' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

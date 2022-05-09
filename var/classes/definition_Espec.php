@@ -1,23 +1,13 @@
-<?php 
-
-/** 
-* Inheritance: no
-* Variants: no
-
-
-Fields Summary: 
-- title [classificationstore]
-- attibute [classificationstore]
-- icon [image]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
+   'dao' => NULL,
    'id' => 'SPEC',
    'name' => 'Espec',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1625782266,
+   'modificationDate' => 1651792734,
    'userOwner' => 1,
    'userModification' => 1,
    'parentClass' => '',
@@ -37,9 +27,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
   ),
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => 'pimcore_root',
      'type' => NULL,
      'region' => NULL,
@@ -51,11 +38,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Region::__set_state(array(
-         'fieldtype' => 'region',
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -67,13 +53,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'fieldtype' => 'panel',
-             'layout' => NULL,
-             'border' => false,
              'name' => 'Layout',
              'type' => NULL,
              'region' => 'west',
@@ -85,22 +68,37 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'bodyStyle' => '',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
+                 'name' => 'title',
+                 'title' => 'Título',
+                 'tooltip' => 'Adicione se necessário',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
                  'fieldtype' => 'classificationstore',
-                 'childs' => 
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
                 array (
                 ),
-                 'name' => 'title',
+                 'children' => 
+                array (
+                ),
                  'region' => NULL,
                  'layout' => NULL,
-                 'title' => 'Título',
                  'width' => 0,
                  'height' => 0,
                  'maxTabs' => NULL,
-                 'labelWidth' => '',
+                 'labelWidth' => 0,
                  'localized' => false,
                  'storeId' => '3',
                  'hideEmptyData' => true,
@@ -118,7 +116,12 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'maxItems' => 1,
                  'permissionView' => NULL,
                  'permissionEdit' => NULL,
-                 'tooltip' => 'Adicione se necessário',
+              )),
+              1 => 
+              Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
+                 'name' => 'attibute',
+                 'title' => 'Descri&ccedil;&atilde;o',
+                 'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
                  'index' => false,
@@ -126,6 +129,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'classificationstore',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -133,21 +137,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' => 
                 array (
                 ),
-              )),
-              1 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
-                 'fieldtype' => 'classificationstore',
-                 'childs' => 
+                 'children' => 
                 array (
                 ),
-                 'name' => 'attibute',
                  'region' => NULL,
                  'layout' => NULL,
-                 'title' => 'Descri&ccedil;&atilde;o',
                  'width' => 0,
                  'height' => 0,
                  'maxTabs' => NULL,
-                 'labelWidth' => '',
+                 'labelWidth' => 0,
                  'localized' => false,
                  'storeId' => '2',
                  'hideEmptyData' => true,
@@ -165,36 +163,21 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'maxItems' => 0,
                  'permissionView' => NULL,
                  'permissionEdit' => NULL,
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
               )),
             ),
              'locked' => false,
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'panel',
+             'layout' => NULL,
+             'border' => false,
              'icon' => '',
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'fieldtype' => 'panel',
-             'layout' => NULL,
-             'border' => false,
              'name' => 'Layout',
              'type' => NULL,
              'region' => 'east',
@@ -206,11 +189,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'bodyStyle' => '',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'childs' => 
+             'children' => 
             array (
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-                 'fieldtype' => 'image',
                  'name' => 'icon',
                  'title' => 'Icone',
                  'tooltip' => '',
@@ -221,6 +203,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
+                 'fieldtype' => 'image',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -237,6 +220,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'fieldtype' => 'panel',
+             'layout' => NULL,
+             'border' => false,
              'icon' => '',
              'labelWidth' => 100,
              'labelAlign' => 'left',
@@ -246,6 +232,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'region',
          'icon' => '',
       )),
     ),
@@ -253,6 +240,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',
@@ -290,8 +280,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     ),
   ),
    'enableGridLocking' => false,
-   'dao' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

@@ -1,24 +1,7 @@
-<?php 
-
-/** 
-Fields Summary: 
-- width [quantityValue]
-- lenght [quantityValue]
-- height [quantityValue]
-- weight [quantityValue]
-- packings [quantityValue]
-*/ 
+<?php
 
 
 return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
-   'classDefinitions' => 
-  array (
-    0 => 
-    array (
-      'classname' => 'Bicicleta',
-      'fieldname' => 'wholesalePacking',
-    ),
-  ),
    'dao' => NULL,
    'key' => 'WholesalePacking',
    'parentClass' => '',
@@ -27,9 +10,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'group' => '',
    'layoutDefinitions' => 
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-     'fieldtype' => 'panel',
-     'layout' => NULL,
-     'border' => false,
      'name' => NULL,
      'type' => NULL,
      'region' => NULL,
@@ -41,13 +21,10 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-         'fieldtype' => 'panel',
-         'layout' => NULL,
-         'border' => false,
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
@@ -59,31 +36,10 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-             'fieldtype' => 'quantityValue',
-             'width' => '',
-             'unitWidth' => '',
-             'defaultValue' => NULL,
-             'defaultUnit' => '1',
-             'validUnits' => 
-            array (
-              0 => '9',
-              1 => '2',
-              2 => '6',
-              3 => '5',
-              4 => '4',
-              5 => '7',
-              6 => '3',
-              7 => '8',
-              8 => '1',
-              9 => '11',
-              10 => '10',
-            ),
-             'decimalPrecision' => NULL,
-             'autoConvert' => false,
              'name' => 'width',
              'title' => 'Largura',
              'tooltip' => '',
@@ -94,6 +50,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'quantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -101,11 +58,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValueGenerator' => '',
-          )),
-          1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-             'fieldtype' => 'quantityValue',
              'width' => '',
              'unitWidth' => '',
              'defaultValue' => NULL,
@@ -126,6 +78,10 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'decimalPrecision' => NULL,
              'autoConvert' => false,
+             'defaultValueGenerator' => '',
+          )),
+          1 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
              'name' => 'lenght',
              'title' => 'Comprimento',
              'tooltip' => '',
@@ -136,6 +92,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'quantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -143,11 +100,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValueGenerator' => '',
-          )),
-          2 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-             'fieldtype' => 'quantityValue',
              'width' => '',
              'unitWidth' => '',
              'defaultValue' => NULL,
@@ -168,6 +120,10 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'decimalPrecision' => NULL,
              'autoConvert' => false,
+             'defaultValueGenerator' => '',
+          )),
+          2 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
              'name' => 'height',
              'title' => 'Altura',
              'tooltip' => '',
@@ -178,6 +134,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'quantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -185,11 +142,48 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
+             'width' => '',
+             'unitWidth' => '',
+             'defaultValue' => NULL,
+             'defaultUnit' => '1',
+             'validUnits' => 
+            array (
+              0 => '9',
+              1 => '2',
+              2 => '6',
+              3 => '5',
+              4 => '4',
+              5 => '7',
+              6 => '3',
+              7 => '8',
+              8 => '1',
+              9 => '11',
+              10 => '10',
+            ),
+             'decimalPrecision' => NULL,
+             'autoConvert' => false,
              'defaultValueGenerator' => '',
           )),
           3 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'name' => 'weight',
+             'title' => 'Peso',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
              'fieldtype' => 'quantityValue',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
              'width' => '',
              'unitWidth' => '',
              'defaultValue' => NULL,
@@ -210,8 +204,12 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'decimalPrecision' => NULL,
              'autoConvert' => false,
-             'name' => 'weight',
-             'title' => 'Peso',
+             'defaultValueGenerator' => '',
+          )),
+          4 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+             'name' => 'packings',
+             'title' => 'Embalagens',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -220,6 +218,7 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
+             'fieldtype' => 'quantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
@@ -227,11 +226,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValueGenerator' => '',
-          )),
-          4 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-             'fieldtype' => 'quantityValue',
              'width' => '',
              'unitWidth' => '',
              'defaultValue' => NULL,
@@ -252,23 +246,6 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
             ),
              'decimalPrecision' => NULL,
              'autoConvert' => false,
-             'name' => 'packings',
-             'title' => 'Embalagens',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'datatype' => 'data',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
              'defaultValueGenerator' => '',
           )),
         ),
@@ -276,8 +253,11 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
          'blockedVarsForExport' => 
         array (
         ),
+         'fieldtype' => 'panel',
+         'layout' => NULL,
+         'border' => false,
          'icon' => NULL,
-         'labelWidth' => '',
+         'labelWidth' => 0,
          'labelAlign' => 'left',
       )),
     ),
@@ -285,6 +265,9 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
      'blockedVarsForExport' => 
     array (
     ),
+     'fieldtype' => 'panel',
+     'layout' => NULL,
+     'border' => false,
      'icon' => NULL,
      'labelWidth' => 100,
      'labelAlign' => 'left',
@@ -292,5 +275,13 @@ return Pimcore\Model\DataObject\Objectbrick\Definition::__set_state(array(
    'generateTypeDeclarations' => true,
    'blockedVarsForExport' => 
   array (
+  ),
+   'classDefinitions' => 
+  array (
+    0 => 
+    array (
+      'classname' => 'Bicicleta',
+      'fieldname' => 'wholesalePacking',
+    ),
   ),
 ));
