@@ -25,7 +25,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Pimcore\Model\Asset;
+use Pimcore\Model\DataObject\Data\Hotspotimage;
 use Pimcore\Model\DataObject\Bicicleta;
+use Pimcore\Model\DataObject\Produtos;
 
 class Web2printController extends BaseController
 {

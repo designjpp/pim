@@ -2,130 +2,175 @@
 
 {% extends 'layouts/print_catalog.html.twig' %}
 
-{% do pimcore_head_link().appendStylesheet('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',null,null,{integrity:"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC",crossorigin:"anonymous"}) %}
+{% do pimcore_head_link().appendStylesheet('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',null,null,{integrity:"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",crossorigin:"anonymous"}) %}
 
 {% block content %}
- {# Marca #}
-    {{bicicleta.brand[0].name}}
-    {# {{bicicleta.id}} #}
-    {# {{ dump(bicicleta.brand[0] ) }} #}
-    {# {{ bicicleta.brand.brand.thumbnail('print_product_detail_manufacturer').getHTML({imgAttributes: {class: 'img-fluid float-right'}})|raw }} #}
-    {# Nome / serie #}
-    <h1>{{bicicleta.name}} {{bicicleta.serie}}</h1>
-    {# Coleção #}
-    <h4>{{bicicleta.collectionYear}}/{{bicicleta.collectionYear2}}</h4>
-    {# Capa #}
-    {% if bicicleta.cover %}
+    <div class="page product-sheet">
+        <div class="print-row">
+            <div class="print-col-6">
+                {% if(product.mainImage) %}
+                    <div class="">
+                        {{ product.mainImage.thumbnail('print_product_detail').getHTML({imgAttributes: {class: 'img-fluid'}})|raw }}
 
-        {{bicicleta.cover.thumbnail('print_product_detail').getHTML({imgAttributes: {class: 'img-fluid'}})|raw }}
-    {% endif %}
-    {# Uso Recomendado #}
-    {% if bicicleta.useRecommendation %}
-        {% for recomendation in bicicleta.useRecommendation %}
-            <b>{{recomendation.name}}<b>
-            <p>{{recomendation.textDesc}}<p>
-        {% endfor %}
-    {% endif %}
-    {#  Destaques #}
-    {% if bicicleta.featuresList %}
+                        {% set additionalImages = product.additionalImages %}
+                        {%  if(additionalImages) %}
 
-        {% for feature in bicicleta.featuresList %}
-            <b>{{feature.name}}<b>
-            <p>{{feature.description}}<p>
-        {% endfor %}
-    {% endif %}
-    {# Selos  #}
-    {% if bicicleta.label %}
-        {% for label in bicicleta.label %}
-            <b>{{label.name}}<b>
-            {{label.textDesc}}
-        {% endfor %}
-    {% endif %}
-    {# Descriçnão #}
-    {# {{bicicleta.description}} #}
-    {# Quadro #}
-    {% if(bicicleta.frame) %}
-        {{ macros.bike(bicicleta.frame, 'frame') }}
-    {%  endif %}
-    {# HeadSet #}
-    {% if(bicicleta.headSet) %}
-        {{ macros.bike(bicicleta.headSet, 'headSet') }}
-    {%  endif %}
-    {# Suspensão #}
-    {% if(bicicleta.fork) %}
-        {{ macros.bike(bicicleta.fork, 'Suspensão') }}
-    {%  endif %}
+                            <div class="print-row">
 
-     {# Suspensão #}
-    {% if(bicicleta.rearShock) %}
-        {{ macros.bike(bicicleta.rearShock, 'rearShock') }}
-    {%  endif %}
+                                {% for image in additionalImages %}
 
-    {% if(variants)%}
-        {% for variant in variants %}
-        
-        <p style="color:{{variant.cor.getHex()}};">{{variant.cor.getHex()}}</p>
-        <p style="color:{{variant.cor2.getHex()}};">{{variant.cor2.getHex()}}</p>
-        <p style="color:{{variant.cor3.getHex()}};">{{variant.cor3.getHex()}}</p>
-        <p> {{ variant.frameSize }} - {{variant.typeTaxation}}/{{ variant.jppCode }}</p>
-        <hr />
-        {% endfor %}
-    {%  endif %}
+                                    <div class="print-col-6 mt-3">
+                                        {{ image.thumbnail('print_product_detail_small').getHTML({imgAttributes: {class: 'img-fluid'}})|raw }}
+                                    </div>
+
+                                {% endfor %}
+
+                            </div>
+
+                        {%  endif %}
+                </div>
+            {% endif %}
+            </div>
+
+            <div class="print-col-6">
+                <div class="print-row d-none d-block mb-3">
+                    <div class="print-col-12">
+                        {% if(product.manufacturer and product.manufacturer.logo)  %}
+                            {{ product.manufacturer.logo.thumbnail('print_product_detail_manufacturer').getHTML({imgAttributes: {class: 'img-fluid float-right'}})|raw }}
+                        {%  endif  %}
+
+                        <h1 class="d-block">{{ product.oSName }}</h1>
+                    </div>
+                </div>
+                <div class="print-row pt-3">
+                    <dl class="item-property print-col-12">
+                        <dt>{{ 'general.color' | trans }}</dt>
+                        <dd>
+                            {{ product.color | colorname }}
+                        </dd>
+                    </dl>
+
+                    {% if(product.bodyStyle) %}
+                        <dl class="item-property print-col-6">
+                            <dt>{{ 'general.body-style' | trans }}</dt>
+                            <dd>{{ product.bodyStyle.name }}</dd>
+                        </dl>
+                    {% endif %}
+
+                    <dl class="item-property print-col-6">
+                        <dt>{{ 'general.car-class' | trans }}</dt>
+                        <dd>{{ ('attribute.' ~ product.carClass) | lower | trans }}</dd>
+                    </dl>
+
+                    {% if product.saleInformation.saleInformation %}
+                        <dl class="item-property print-col-6 mb-0">
+                            <dt class="">{{ 'general.condition' | trans }}</dt>
+                            <dd>{{ ('attribute.' ~ product.saleInformation.saleInformation.condition) | lower | trans}}</dd>
+                        </dl>
+
+                        <dl class="item-property print-col-6 mb-0">
+                            <dt class="">{{ 'general.milage' | trans }}</dt>
+                            <dd>{{ product.saleInformation.saleInformation.milage}}</dd>
+                        </dl>
+                    {% endif %}
 
 
-    {# {{ dump(bicicleta.geometry ) }} #}
-    {% if bicicleta.geometry %}
-        {% for geo in bicicleta.geometry %}
-            <h1>Geometria</h1>
-            {{ geo.frameSizes }}
-            {{ geo.wheelSizes }}
-            {{ geo.wheel[0].size.value  }}
-            {{ geo.frameSize[0].size.value }}
-            {# {{ dump(geo ) }} #}
-            {{geo.geoimage}}
-            {% if(geo.SeatTube) %}
-                {{ macros.geometry(geo.SeatTube, 'Seat Tube') }}
-            {%  endif %}
-            {% if(geo.SeatTubeAngle) %}
-                {{ macros.geometry(geo.SeatTubeAngle, 'SeatTubeAngle') }}
-            {%  endif %}
-            {% if(geo.TopTubeLengthReal) %}
-                {{ macros.geometry(geo.TopTubeLengthReal, 'TopTubeLengthReal') }}
-            {%  endif %}
-            {% if(geo.TopTubeLengthVirtual) %}
-                {{ macros.geometry(geo.TopTubeLengthVirtual, 'TopTubeLengthVirtual') }}
-            {%  endif %}
-            {% if(geo.HeadTubeLength) %}
-                {{ macros.geometry(geo.HeadTubeLength, 'HeadTubeLength') }}
-            {%  endif %}
-            {% if(geo.ChanstayLength) %}
-                {{ macros.geometry(geo.ChanstayLength, 'ChanstayLength') }}
-            {%  endif %}
-            {% if(geo.FronCenterLength) %}
-                {{ macros.geometry(geo.FronCenterLength, 'FronCenterLength') }}
-            {%  endif %}
-            {% if(geo.WeelbaseLength) %}
-                {{ macros.geometry(geo.WeelbaseLength, 'WeelbaseLength') }}
-            {%  endif %}
-            {% if(geo.Stack) %}
-                {{ macros.geometry(geo.Stack, 'Stack') }}
-            {%  endif %}
-            {% if(geo.Stack) %}
-                {{ macros.geometry(geo.Stack, 'Stack') }}
-            {%  endif %}
-            {% if(geo.Reach) %}
-                {{ macros.geometry(geo.Reach, 'Reach') }}
-            {%  endif %}
-            {% if(geo.ForkLength) %}
-                {{ macros.geometry(geo.ForkLength, 'ForkLength') }}
-            {%  endif %}
-            {% if(geo.ForkRakeOffset) %}
-                {{ macros.geometry(geo.ForkRakeOffset, 'ForkRakeOffset') }}
-            {%  endif %}
-            {% if(geo.Trial) %}
-                {{ macros.geometry(geo.Trial, 'Trial') }}
-            {%  endif %}
-        {% endfor %}
-    {% endif %} 
+                </div>
+                <div class="print-row">
+                    <hr/>
+                    <div class="mt-4 text-center">
+                        {% set priceInfo = product.oSPriceInfo %}
+                        {% set price = product.oSPrice %}
 
+
+                        {% if(priceInfo.hasDiscount) %}
+                            <p class="detail-price original mb-3">{{ priceInfo.originalPrice }}</p>
+                        {% endif %}
+
+                        <p class="detail-price mb-2">{{ price }}</p>
+
+                        <div class="detail-tax text-muted">
+                            <ul class="list-unstyled">
+                                {% for taxEntry in price.taxEntries %}
+                                    <li>{{ taxEntry.entry.name }}: {{ taxEntry.percent }}% ({{ taxEntry.amount.asNumeric | currency(price.currency.shortName) }})</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="print-row">
+
+            <div class="print-col-12 text-center">
+                <hr/>
+                <h4 class="text-center mt-4">{{ 'general.additional-information' | trans }}</h4>
+
+                {% if(product.description) %}
+                    <p>{{ product.description | raw }}</p>
+                {% endif %}
+
+            </div>
+
+            <div class="print-col-12">
+                <div class="print-row">
+
+                    <h2 class="print-col-12">{{ 'general.general' | trans }}</h2>
+
+                    {% if(product.manufacturer) %}
+                        <dl class="item-property print-col-3">
+                            <dt>{{ 'general.manufacturer' | trans }}</dt>
+                            <dd>{{ product.manufacturer.name }}</dd>
+                        </dl>
+                    {% endif %}
+
+                    {{ macros.attribute(product.productionYear, 'general.productionYear') }}
+
+                    {% if(product.country) %}
+                        <dl class="item-property print-col-3">
+                            <dt>{{ 'general.country' | trans }}</dt>
+                            <dd>{{ product.country | country }}</dd>
+                        </dl>
+                    {% endif %}
+
+                </div>
+
+                {% if(product.attributes.dimensions or product.attributes.bodywork) %}
+                    <div class="print-row">
+                        <h2 class="print-col-12">{{ 'general.dimensions' | trans }}</h2>
+
+                        {% if(product.attributes.dimensions) %}
+                            {{ macros.attribute(product.attributes.dimensions.length, 'general.length') }}
+                            {{ macros.attribute(product.attributes.dimensions.width, 'general.width') }}
+                            {{ macros.attribute(product.attributes.dimensions.wheelbase, 'general.wheelbase') }}
+                            {{ macros.attribute(product.attributes.dimensions.weight, 'general.weight') }}
+                        {%  endif %}
+
+                        {% if(product.attributes.bodywork) %}
+                            {{ macros.attribute(product.attributes.bodywork.numberOfDoors, 'general.numberOfDoors') }}
+                            {{ macros.attribute(product.attributes.bodywork.numberOfSeats, 'general.numberOfSeats') }}
+                        {%  endif %}
+
+                    </div>
+                {%  endif %}
+                {% if(product.attributes.engine or product.attributes.transmission) %}
+                    <div class="print-row">
+                        <h2 class="print-col-12">{{ 'general.engine' | trans }}</h2>
+                        {% if(product.attributes.engine) %}
+                            {{ macros.attribute(product.attributes.engine.cylinders, 'general.cylinders') }}
+                            {{ macros.attribute(product.attributes.engine.capacity, 'general.capacity') }}
+                            {{ macros.attribute(product.attributes.engine.power, 'general.power') }}
+                            {{ macros.attribute(product.attributes.engine.engineLocation, 'general.engineLocation') }}
+                        {%  endif %}
+
+                        {% if(product.attributes.transmission) %}
+                            {{ macros.attribute(product.attributes.transmission.wheelDrive, 'general.wheelDrive', true, 'attribute.') }}
+                        {%  endif %}
+                    </div>
+                {%  endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

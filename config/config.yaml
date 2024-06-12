@@ -1,10 +1,10 @@
 imports:
     - { resource: "local/" }
-    - { resource: ecommerce/base-ecommerce.yaml }
-    - { resource: cmf.yaml }
-    - { resource: workflows.yaml }
+    # - { resource: ecommerce/base-ecommerce.yaml }
+    # - { resource: cmf.yaml }
+    # - { resource: workflows.yaml }
 
-pimcore:
+# pimcore:
     # IMPORTANT Notice!
     # Following there are only some examples listed, for a full list of possible options, please run the following command:
     # ./bin/console debug:config pimcore
@@ -13,10 +13,10 @@ pimcore:
     # or even more specific:
     # ./bin/console debug:config pimcore assets.image
 
-    security:
-        # the encoder factory as shipped by the CMF
-        encoder_factories:
-            Pimcore\Model\DataObject\Customer: cmf.security.user_password_encoder_factory
+    # security:
+    #     # the encoder factory as shipped by the CMF
+    #     encoder_factories:
+    #         Pimcore\Model\DataObject\Customer: cmf.security.user_password_encoder_factory
 
     # sitemaps:
     #     generators:

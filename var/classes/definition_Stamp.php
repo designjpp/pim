@@ -1,23 +1,25 @@
 <?php
 
 /**
- * Inheritance: no
+ * Inheritance: yes
  * Variants: no
+ * Selo(s)
  *
  * Fields Summary:
  * - name [input]
  * - textDesc [textarea]
- * - gallery [imageGallery]
+ * - ondeExibir [select]
+ * - image [image]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => 'IN',
-   'name' => 'info',
-   'description' => '',
+   'id' => 'ST',
+   'name' => 'Stamp',
+   'description' => 'Selo(s)',
    'creationDate' => 0,
-   'modificationDate' => 1687983091,
-   'userOwner' => 1,
+   'modificationDate' => 1687983092,
+   'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
    'implementsInterfaces' => '',
@@ -28,7 +30,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' =>
   array (
   ),
-   'allowInherit' => false,
+   'allowInherit' => true,
    'allowVariants' => false,
    'showVariants' => false,
    'fieldDefinitions' =>
@@ -59,7 +61,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'height' => '',
          'collapsible' => false,
          'collapsed' => false,
-         'bodyStyle' => 'NULL',
+         'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
          'children' =>
@@ -70,7 +72,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'type' => NULL,
              'region' => 'center',
              'title' => '',
-             'width' => '',
+             'width' => 900,
              'height' => '',
              'collapsible' => false,
              'collapsed' => false,
@@ -82,7 +84,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               0 =>
               Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                  'name' => 'name',
-                 'title' => 'T&iacute;tulo',
+                 'title' => 'Nome',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -94,12 +96,12 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'fieldtype' => 'input',
                  'relationType' => false,
                  'invisible' => false,
-                 'visibleGridView' => true,
-                 'visibleSearch' => true,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
                  'blockedVarsForExport' =>
                 array (
                 ),
-                 'width' => 300,
+                 'width' => 0,
                  'defaultValue' => NULL,
                  'columnLength' => 190,
                  'regex' => '',
@@ -113,7 +115,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               1 =>
               Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
                  'name' => 'textDesc',
-                 'title' => 'Texto',
+                 'title' => 'Descri&ccedil;&atilde;o',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -130,11 +132,60 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' =>
                 array (
                 ),
-                 'width' => 300,
-                 'height' => '',
+                 'width' => 0,
+                 'height' => 0,
                  'maxLength' => NULL,
                  'showCharCount' => false,
                  'excludeFromSearchIndex' => false,
+              )),
+              2 =>
+              Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+                 'name' => 'ondeExibir',
+                 'title' => 'Onde Exibir',
+                 'tooltip' => '',
+                 'mandatory' => true,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'fieldtype' => 'select',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' =>
+                array (
+                ),
+                 'options' =>
+                array (
+                  0 =>
+                  array (
+                    'key' => 'B2B',
+                    'value' => 'B2B',
+                    'id' => 'extModel1541-1',
+                  ),
+                  1 =>
+                  array (
+                    'key' => 'B2C',
+                    'value' => 'B2C',
+                    'id' => 'extModel1541-2',
+                  ),
+                  2 =>
+                  array (
+                    'key' => 'Ambos',
+                    'value' => 'Ambos',
+                    'id' => 'extModel1541-3',
+                  ),
+                ),
+                 'width' => '',
+                 'defaultValue' => 'B2B',
+                 'optionsProviderClass' => '',
+                 'optionsProviderData' => '',
+                 'columnLength' => 190,
+                 'dynamicOptions' => false,
+                 'defaultValueGenerator' => '',
               )),
             ),
              'locked' => false,
@@ -154,7 +205,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'type' => NULL,
              'region' => 'east',
              'title' => '',
-             'width' => 450,
+             'width' => '',
              'height' => '',
              'collapsible' => false,
              'collapsed' => false,
@@ -164,9 +215,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'children' =>
             array (
               0 =>
-              Pimcore\Model\DataObject\ClassDefinition\Data\ImageGallery::__set_state(array(
-                 'name' => 'gallery',
-                 'title' => 'Gallery',
+              Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
+                 'name' => 'image',
+                 'title' => 'Imagem',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -175,7 +226,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
-                 'fieldtype' => 'imageGallery',
+                 'fieldtype' => 'image',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -183,12 +234,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' =>
                 array (
                 ),
-                 'width' => 412,
-                 'height' => 330,
+                 'width' => '',
+                 'height' => '',
                  'uploadPath' => '',
-                 'ratioX' => NULL,
-                 'ratioY' => NULL,
-                 'predefinedDataTemplates' => '',
               )),
             ),
              'locked' => false,
@@ -222,7 +270,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '/bundles/pimcoreadmin/img/flat-color-icons/filing_cabinet.svg',
+   'icon' => '/bundles/pimcoreadmin/img/flat-color-icons/star.svg',
    'previewUrl' => '',
    'group' => 'Produtos',
    'showAppLoggerTab' => false,
@@ -241,8 +289,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       'key' => false,
       'path' => true,
       'published' => true,
-      'modificationDate' => false,
-      'creationDate' => false,
+      'modificationDate' => true,
+      'creationDate' => true,
     ),
     'search' =>
     array (
@@ -250,8 +298,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       'key' => false,
       'path' => true,
       'published' => true,
-      'modificationDate' => false,
-      'creationDate' => false,
+      'modificationDate' => true,
+      'creationDate' => true,
     ),
   ),
    'enableGridLocking' => false,

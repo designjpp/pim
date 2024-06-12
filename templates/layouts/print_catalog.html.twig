@@ -1,53 +1,68 @@
+<!doctype html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% if head_stylesheets is defined  %}
+            {% block head_stylesheets deferred %}
+                {{ pimcore_head_link() }}
+            {% endblock %}
+        {% endif %}
 
-<!DOCTYPE html>
-<html lang="">
-<head>
+        {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> #}
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    {% block head_stylesheets deferred %}
-        {{ pimcore_head_link() }}
-    {% endblock %}
+        <link rel="stylesheet" type="text/css" href="/static/print/css/print-style.css"/>
 
-    <link rel="stylesheet" type="text/css" href="/static/print/css/print-style.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        {% if editmode %}
+            <link rel="stylesheet" type="text/css" href="/static/print/css/print-edit.css" media="screen" />
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="/static/print/css/print-preview.css" media="screen" />
 
-    {# <link href="https://fonts.googleapis.com/css?family=Hind+Guntur:300,400,500,600,700&display=swap" rel="stylesheet"> #}
-    {% if editmode %}
-        <link rel="stylesheet" type="text/css" href="/static/print/css/print-edit.css" media="screen" />
-    {% endif %}
-    <link rel="stylesheet" type="text/css" href="/static/print/css/print-preview.css" media="screen" />
-
-    {% if printermarks is defined and printermarks == true %}
-        <link rel="stylesheet" type="text/css" href="/bundles/pimcoreadmin/css/print/print-printermarks.css" media="print" />
-    {% endif %}
+        {% if printermarks is defined and printermarks == true %}
+            <link rel="stylesheet" type="text/css" href="/bundles/pimcorewebtoprint/css/print/print-printermarks.css" media="print" />
+        {% endif %}
 
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
 
-
-    {% block headscripts deferred %}
+    {# {% block headscripts deferred %}
         {{ pimcore_head_script() }}
-    {% endblock %}
-
-    {% block register_definition deferred %}
-        <style type="text/css">
-            {{ pimcore_placeholder('register-title-definition') }}
-        </style>
-    {% endblock %}
+    {% endblock %} #}
+    {% if register_definition is defined  %}
+        {% block register_definition deferred %}
+            <style type="text/css">
+                {{ pimcore_placeholder('register-title-definition') }}
+            </style>
+        {% endblock %}
+    {% endif %}
 
 </head>
 
 <body>
-
 <div class="site">
     {{ block('content') }}
 </div>
 
 
-
-{% block inlinescripts deferred %}
-    {{ pimcore_inline_script() }}
-{% endblock %}
-
-
+{% if inlinescripts is defined  %}
+    {% block inlinescripts deferred %}
+        {{ pimcore_inline_script() }}
+    {% endblock %}
+{% endif %}
 </body>
 </html>

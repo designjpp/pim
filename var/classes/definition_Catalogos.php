@@ -5,20 +5,22 @@
  * Variants: no
  *
  * Fields Summary:
- * - name [input]
- * - description [textarea]
+ * - Nome [input]
+ * - versao [numeric]
+ * - date [date]
  * - ondeExibir [select]
- * - image [image]
+ * - catalogo [advancedManyToManyRelation]
+ * - capa [image]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => 'DST',
-   'name' => 'Destaque',
+   'id' => '6',
+   'name' => 'Catalogos',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1687983091,
-   'userOwner' => 1,
+   'modificationDate' => 1692713453,
+   'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
    'implementsInterfaces' => '',
@@ -55,9 +57,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
          'region' => NULL,
-         'title' => '',
-         'width' => NULL,
-         'height' => NULL,
+         'title' => 'Geral',
+         'width' => '',
+         'height' => '',
          'collapsible' => false,
          'collapsed' => false,
          'bodyStyle' => '',
@@ -69,10 +71,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
-             'region' => 'west',
+             'region' => 'center',
              'title' => '',
-             'width' => 500,
-             'height' => NULL,
+             'width' => '',
+             'height' => '',
              'collapsible' => false,
              'collapsed' => false,
              'bodyStyle' => '',
@@ -82,7 +84,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 =>
               Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'name' => 'name',
+                 'name' => 'Nome',
                  'title' => 'Nome',
                  'tooltip' => '',
                  'mandatory' => false,
@@ -95,8 +97,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'fieldtype' => 'input',
                  'relationType' => false,
                  'invisible' => false,
-                 'visibleGridView' => true,
-                 'visibleSearch' => true,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
                  'blockedVarsForExport' =>
                 array (
                 ),
@@ -112,9 +114,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValueGenerator' => '',
               )),
               1 =>
-              Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
-                 'name' => 'description',
-                 'title' => 'Descri&ccedil;&atilde;o',
+              Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+                 'name' => 'versao',
+                 'title' => 'Versão',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -123,7 +125,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
-                 'fieldtype' => 'textarea',
+                 'fieldtype' => 'numeric',
                  'relationType' => false,
                  'invisible' => false,
                  'visibleGridView' => false,
@@ -132,12 +134,43 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 array (
                 ),
                  'width' => '',
-                 'height' => '',
-                 'maxLength' => NULL,
-                 'showCharCount' => false,
-                 'excludeFromSearchIndex' => false,
+                 'defaultValue' => NULL,
+                 'integer' => false,
+                 'unsigned' => false,
+                 'minValue' => NULL,
+                 'maxValue' => NULL,
+                 'unique' => false,
+                 'decimalSize' => NULL,
+                 'decimalPrecision' => NULL,
+                 'defaultValueGenerator' => '',
               )),
               2 =>
+              Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
+                 'name' => 'date',
+                 'title' => 'Date',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'fieldtype' => 'date',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' =>
+                array (
+                ),
+                 'queryColumnType' => 'date',
+                 'columnType' => 'date',
+                 'defaultValue' => NULL,
+                 'useCurrentDate' => false,
+                 'defaultValueGenerator' => '',
+              )),
+              3 =>
               Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
                  'name' => 'ondeExibir',
                  'title' => 'Onde Exibir',
@@ -163,19 +196,16 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   array (
                     'key' => 'B2B',
                     'value' => 'B2B',
-                    'id' => 'extModel1541-1',
                   ),
                   1 =>
                   array (
                     'key' => 'B2C',
                     'value' => 'B2C',
-                    'id' => 'extModel1541-2',
                   ),
                   2 =>
                   array (
                     'key' => 'Ambos',
                     'value' => 'Ambos',
-                    'id' => 'extModel1541-3',
                   ),
                 ),
                  'width' => '',
@@ -186,6 +216,67 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'dynamicOptions' => false,
                  'defaultValueGenerator' => '',
               )),
+              4 =>
+              Pimcore\Model\DataObject\ClassDefinition\Data\AdvancedManyToManyRelation::__set_state(array(
+                 'name' => 'catalogo',
+                 'title' => 'Catálogo',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'fieldtype' => 'advancedManyToManyRelation',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' =>
+                array (
+                ),
+                 'classes' =>
+                array (
+                ),
+                 'pathFormatterClass' => '@DataDirectorSearchViewPathFormatter',
+                 'width' => '',
+                 'height' => NULL,
+                 'maxItems' => NULL,
+                 'assetUploadPath' => '',
+                 'objectsAllowed' => false,
+                 'assetsAllowed' => true,
+                 'assetTypes' =>
+                array (
+                  0 =>
+                  array (
+                    'assetTypes' => 'document',
+                  ),
+                  1 =>
+                  array (
+                    'assetTypes' => 'archive',
+                  ),
+                  2 =>
+                  array (
+                    'assetTypes' => 'image',
+                  ),
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' =>
+                array (
+                ),
+                 'enableTextSelection' => false,
+                 'columns' =>
+                array (
+                ),
+                 'columnKeys' =>
+                array (
+                ),
+                 'phpdocType' => '\\Pimcore\\Model\\DataObject\\Data\\ElementMetadata[]',
+                 'optimizedAdminLoading' => true,
+                 'enableBatchEdit' => true,
+                 'allowMultipleAssignments' => true,
+              )),
             ),
              'locked' => false,
              'blockedVarsForExport' =>
@@ -195,7 +286,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'layout' => NULL,
              'border' => false,
              'icon' => '',
-             'labelWidth' => 100,
+             'labelWidth' => 0,
              'labelAlign' => 'left',
           )),
           1 =>
@@ -203,9 +294,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
              'region' => 'east',
-             'title' => '',
-             'width' => NULL,
-             'height' => NULL,
+             'title' => 'Arquivo',
+             'width' => 600,
+             'height' => '',
              'collapsible' => false,
              'collapsed' => false,
              'bodyStyle' => '',
@@ -215,8 +306,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
               0 =>
               Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-                 'name' => 'image',
-                 'title' => 'Imagem',
+                 'name' => 'capa',
+                 'title' => 'Capa',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -246,7 +337,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'layout' => NULL,
              'border' => false,
              'icon' => '',
-             'labelWidth' => 100,
+             'labelWidth' => 0,
              'labelAlign' => 'left',
           )),
         ),
@@ -269,9 +360,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '/bundles/pimcoreadmin/img/flat-color-icons/diploma_1.svg',
+   'icon' => '',
    'previewUrl' => '',
-   'group' => 'Produtos',
+   'group' => 'CMS',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
    'previewGeneratorReference' => '@DataDirectorPreview',

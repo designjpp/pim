@@ -1,7 +1,7 @@
 {# {% set detailLink = app_product_detaillink(product) %} #}
 
 
-<div class="productCell">
+{# <div class="productCell">
     {% if bicicleta %}
         <h1>Biicleya</h1>
         {{ dump(bicicleta) }}
@@ -38,5 +38,26 @@
         <p>Drag a product here</p>
 
     {% endif %} #}
+{# </div> #}
+
+{# {% set detailLink = app_product_detaillink(product) %} #}
+
+
+<div class="productCell">
+    {% if bicicleta %}
+        {# {{ dump(bicicleta) }} #}
+        <div class="texts">
+            <h4>{{bicicleta.name}} {{bicicleta.serie}}</h4>
+
+            <div class="infoblock">
+                    <p>{{bicicleta.collectionYear}}/{{bicicleta.collectionYear2}}</p>
+            </div>
+        </div>
+            {% if(bicicleta.image) %}
+                {{ bicicleta.image.thumbnail('print_productcell').html() | raw }}
+            {% endif %}   
+    {%  elseif editmode %}
+        <p>Drag a product here</p>
+    {% endif %}
 </div>
 

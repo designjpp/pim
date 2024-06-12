@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Inheritance: no
+ * Variants: no
+ *
+ * Fields Summary:
+ * - manufacturer [manyToManyObjectRelation]
+ * - model [input]
+ * - name [input]
+ * - spec [classificationstore]
+ * - freespec [block]
+ * -- text [input]
+ */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
@@ -7,25 +19,25 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'CompMontagem',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1651792733,
+   'modificationDate' => 1687983091,
    'userOwner' => 1,
-   'userModification' => 1,
+   'userModification' => 2,
    'parentClass' => '',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
    'listingUseTraits' => '',
    'encryption' => false,
-   'encryptedTables' => 
+   'encryptedTables' =>
   array (
   ),
    'allowInherit' => false,
    'allowVariants' => false,
    'showVariants' => false,
-   'fieldDefinitions' => 
+   'fieldDefinitions' =>
   array (
   ),
-   'layoutDefinitions' => 
+   'layoutDefinitions' =>
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => 'pimcore_root',
      'type' => NULL,
@@ -38,9 +50,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'children' => 
+     'children' =>
     array (
-      0 => 
+      0 =>
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
@@ -53,9 +65,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'children' => 
+         'children' =>
         array (
-          0 => 
+          0 =>
           Pimcore\Model\DataObject\ClassDefinition\Layout\Text::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
@@ -68,11 +80,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'bodyStyle' => '',
              'datatype' => 'layout',
              'permissions' => NULL,
-             'children' => 
+             'children' =>
             array (
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'text',
@@ -84,7 +96,7 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'renderingData' => '',
              'border' => false,
           )),
-          1 => 
+          1 =>
           Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
              'name' => 'manufacturer',
              'title' => 'Fabricante',
@@ -101,17 +113,17 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
-             'classes' => 
+             'classes' =>
             array (
-              0 => 
+              0 =>
               array (
                 'classes' => 'Manufacturer',
               ),
             ),
-             'pathFormatterClass' => '',
+             'pathFormatterClass' => '@DataDirectorSearchViewPathFormatter',
              'width' => 500,
              'height' => '',
              'maxItems' => 1,
@@ -119,11 +131,11 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'allowToCreateNewObject' => false,
              'optimizedAdminLoading' => false,
              'enableTextSelection' => false,
-             'visibleFieldDefinitions' => 
+             'visibleFieldDefinitions' =>
             array (
             ),
           )),
-          2 => 
+          2 =>
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'model',
              'title' => 'Modelo',
@@ -140,21 +152,21 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'width' => '',
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
-             'regexFlags' => 
+             'regexFlags' =>
             array (
             ),
              'unique' => false,
              'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
-          3 => 
+          3 =>
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'name',
              'title' => 'Series',
@@ -171,21 +183,21 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'width' => '',
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
-             'regexFlags' => 
+             'regexFlags' =>
             array (
             ),
              'unique' => false,
              'showCharCount' => false,
              'defaultValueGenerator' => '',
           )),
-          4 => 
+          4 =>
           Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
              'name' => 'spec',
              'title' => 'Especifica&ccedil;&atilde;o',
@@ -202,10 +214,10 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'invisible' => false,
              'visibleGridView' => true,
              'visibleSearch' => true,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
-             'children' => 
+             'children' =>
             array (
             ),
              'region' => NULL,
@@ -215,26 +227,93 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
              'maxTabs' => NULL,
              'labelWidth' => 0,
              'localized' => false,
-             'storeId' => '1',
+             'storeId' => 1,
              'hideEmptyData' => true,
              'disallowAddRemove' => false,
-             'referencedFields' => 
+             'referencedFields' =>
             array (
             ),
              'fieldDefinitionsCache' => NULL,
-             'allowedGroupIds' => 
+             'allowedGroupIds' =>
             array (
             ),
-             'activeGroupDefinitions' => 
+             'activeGroupDefinitions' =>
             array (
             ),
              'maxItems' => 0,
              'permissionView' => NULL,
              'permissionEdit' => NULL,
           )),
+          5 =>
+          Pimcore\Model\DataObject\ClassDefinition\Data\Block::__set_state(array(
+             'name' => 'freespec',
+             'title' => 'Especifica&ccedil;&atilde;o Livre',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'block',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' =>
+            array (
+            ),
+             'lazyLoading' => false,
+             'disallowAddRemove' => false,
+             'disallowReorder' => false,
+             'collapsible' => false,
+             'collapsed' => false,
+             'maxItems' => 0,
+             'styleElement' => '',
+             'children' =>
+            array (
+              0 =>
+              Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                 'name' => 'text',
+                 'title' => 'Texto',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'datatype' => 'data',
+                 'fieldtype' => 'input',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' =>
+                array (
+                ),
+                 'width' => '',
+                 'defaultValue' => NULL,
+                 'columnLength' => 190,
+                 'regex' => '',
+                 'regexFlags' =>
+                array (
+                ),
+                 'unique' => false,
+                 'showCharCount' => false,
+                 'defaultValueGenerator' => '',
+              )),
+            ),
+             'layout' => NULL,
+             'referencedFields' =>
+            array (
+            ),
+             'fieldDefinitionsCache' => NULL,
+          )),
         ),
          'locked' => false,
-         'blockedVarsForExport' => 
+         'blockedVarsForExport' =>
         array (
         ),
          'fieldtype' => 'panel',
@@ -246,7 +325,7 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
       )),
     ),
      'locked' => false,
-     'blockedVarsForExport' => 
+     'blockedVarsForExport' =>
     array (
     ),
      'fieldtype' => 'panel',
@@ -261,14 +340,14 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
    'group' => 'Produtos',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
-   'previewGeneratorReference' => '',
-   'compositeIndices' => 
+   'previewGeneratorReference' => '@DataDirectorPreview',
+   'compositeIndices' =>
   array (
-    0 => 
+    0 =>
     array (
       'index_key' => '',
       'index_type' => 'query',
-      'index_columns' => 
+      'index_columns' =>
       array (
         0 => 'name',
       ),
@@ -276,9 +355,9 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
   ),
    'generateTypeDeclarations' => true,
    'showFieldLookup' => false,
-   'propertyVisibility' => 
+   'propertyVisibility' =>
   array (
-    'grid' => 
+    'grid' =>
     array (
       'id' => true,
       'key' => false,
@@ -287,7 +366,7 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
       'modificationDate' => true,
       'creationDate' => false,
     ),
-    'search' => 
+    'search' =>
     array (
       'id' => true,
       'key' => false,
@@ -298,10 +377,13 @@ Não precisa colocar a marca antes do nome do produto, será adicionado no front
     ),
   ),
    'enableGridLocking' => false,
-   'blockedVarsForExport' => 
+   'deletedDataComponents' =>
   array (
   ),
-   'activeDispatchingEvents' => 
+   'blockedVarsForExport' =>
+  array (
+  ),
+   'activeDispatchingEvents' =>
   array (
   ),
 ));

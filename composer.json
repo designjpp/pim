@@ -7,31 +7,21 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "discard-changes": true,
-    "process-timeout": 0
+    "process-timeout": 0,
+    "allow-plugins": {
+      "php-http/discovery": true,
+      "oat-sa/composer-npm-bridge": true
+    }
   },
   "prefer-stable": true,
   "minimum-stability": "dev",
   "require": {
-    "ext-curl": "*",
-    "ext-dom": "*",
-    "ext-simplexml": "*",
-    "ext-xml": "*",
-    "ci-hub/pimcore-ci-hub-adapter-bundle": "^2.0",
-    "ci-hub/simple-rest-adapter-bundle": "^2.0",
-    "elasticsearch/elasticsearch": "^7.17",
-    "hwi/oauth-bundle": "^1.2.0",
-    "php-http/guzzle7-adapter": "^0.1.1",
-    "php-http/httplug-bundle": "^1",
-    "pimcore/customer-management-framework-bundle": "^3.0",
     "pimcore/data-hub": "^1.0",
     "pimcore/data-importer": "^1.1",
-    "pimcore/payment-provider-unzer": "^1.0",
     "pimcore/perspective-editor": "^1.0",
     "pimcore/pimcore": "^10.0",
-    "pimcore/web2print-tools-bundle": "^4.0"
-  },
-  "suggest": {
-    "elasticsearch/elasticsearch": "Required for Elastic Search service"
+    "pimcore/web2print-tools-bundle": "^4.0",
+    "spiritix/php-chrome-html2pdf": "*"
   },
   "autoload": {
     "psr-4": {

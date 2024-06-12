@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Inheritance: yes
+ * Variants: yes
+ *
+ * Fields Summary:
+ * - size [inputQuantityValue]
+ * - SizeRelationship [manyToManyObjectRelation]
+ * - info [input]
+ */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
@@ -7,25 +16,25 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'Tamanho',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1651792734,
+   'modificationDate' => 1715179976,
    'userOwner' => 1,
-   'userModification' => 1,
+   'userModification' => 2,
    'parentClass' => '',
    'implementsInterfaces' => '',
    'listingParentClass' => '',
    'useTraits' => '',
    'listingUseTraits' => '',
    'encryption' => false,
-   'encryptedTables' => 
+   'encryptedTables' =>
   array (
   ),
-   'allowInherit' => false,
-   'allowVariants' => false,
-   'showVariants' => false,
-   'fieldDefinitions' => 
+   'allowInherit' => true,
+   'allowVariants' => true,
+   'showVariants' => true,
+   'fieldDefinitions' =>
   array (
   ),
-   'layoutDefinitions' => 
+   'layoutDefinitions' =>
   Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => 'pimcore_root',
      'type' => NULL,
@@ -38,9 +47,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'children' => 
+     'children' =>
     array (
-      0 => 
+      0 =>
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
@@ -53,10 +62,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'children' => 
+         'children' =>
         array (
-          0 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
+          0 =>
+          Pimcore\Model\DataObject\ClassDefinition\Data\InputQuantityValue::__set_state(array(
              'name' => 'size',
              'title' => 'Tamanho',
              'tooltip' => '',
@@ -67,36 +76,76 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'fieldtype' => 'quantityValue',
+             'fieldtype' => 'inputQuantityValue',
              'relationType' => false,
              'invisible' => false,
              'visibleGridView' => true,
              'visibleSearch' => true,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'width' => '',
-             'unitWidth' => '',
+             'unitWidth' => NULL,
              'defaultValue' => NULL,
              'defaultUnit' => NULL,
-             'validUnits' => 
+             'validUnits' =>
             array (
-              0 => '9',
-              1 => '10',
-              2 => '3',
-              3 => '7',
-              4 => '6',
-              5 => '4',
-              6 => '1',
-              7 => '8',
-              8 => '5',
-              9 => '2',
+              0 => '3',
+              1 => '1',
+              2 => '2',
+              3 => '6',
+              4 => '7',
             ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => false,
+             'decimalSize' => NULL,
              'decimalPrecision' => NULL,
              'autoConvert' => false,
              'defaultValueGenerator' => '',
           )),
-          1 => 
+          1 =>
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+             'name' => 'SizeRelationship',
+             'title' => 'Relação entre tamanho(s) ',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'fieldtype' => 'manyToManyObjectRelation',
+             'relationType' => true,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' =>
+            array (
+            ),
+             'classes' =>
+            array (
+              0 =>
+              array (
+                'classes' => 'Tamanho',
+              ),
+            ),
+             'pathFormatterClass' => '@DataDirectorSearchViewPathFormatter',
+             'width' => '',
+             'height' => '',
+             'maxItems' => NULL,
+             'visibleFields' => 'size,info,filename,classname,fullpath',
+             'allowToCreateNewObject' => false,
+             'optimizedAdminLoading' => true,
+             'enableTextSelection' => true,
+             'visibleFieldDefinitions' =>
+            array (
+            ),
+          )),
+          2 =>
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'info',
              'title' => 'Info Adicional',
@@ -113,14 +162,14 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'width' => '',
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
-             'regexFlags' => 
+             'regexFlags' =>
             array (
             ),
              'unique' => false,
@@ -129,7 +178,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
         ),
          'locked' => false,
-         'blockedVarsForExport' => 
+         'blockedVarsForExport' =>
         array (
         ),
          'fieldtype' => 'panel',
@@ -141,7 +190,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       )),
     ),
      'locked' => false,
-     'blockedVarsForExport' => 
+     'blockedVarsForExport' =>
     array (
     ),
      'fieldtype' => 'panel',
@@ -156,15 +205,15 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'group' => 'Produtos',
    'showAppLoggerTab' => false,
    'linkGeneratorReference' => '',
-   'previewGeneratorReference' => '',
-   'compositeIndices' => 
+   'previewGeneratorReference' => '@DataDirectorPreview',
+   'compositeIndices' =>
   array (
   ),
    'generateTypeDeclarations' => true,
    'showFieldLookup' => false,
-   'propertyVisibility' => 
+   'propertyVisibility' =>
   array (
-    'grid' => 
+    'grid' =>
     array (
       'id' => true,
       'key' => false,
@@ -173,7 +222,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       'modificationDate' => false,
       'creationDate' => false,
     ),
-    'search' => 
+    'search' =>
     array (
       'id' => true,
       'key' => false,
@@ -184,10 +233,13 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     ),
   ),
    'enableGridLocking' => false,
-   'blockedVarsForExport' => 
+   'deletedDataComponents' =>
   array (
   ),
-   'activeDispatchingEvents' => 
+   'blockedVarsForExport' =>
+  array (
+  ),
+   'activeDispatchingEvents' =>
   array (
   ),
 ));

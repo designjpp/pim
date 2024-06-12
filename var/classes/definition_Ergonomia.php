@@ -6,34 +6,30 @@
  *
  * Fields Summary:
  * - name [input]
- * - wheel [manyToManyObjectRelation]
  * - frameSize [manyToManyObjectRelation]
- * - geoImage [image]
- * - SeatTube [quantityValue]
- * - SeatTubeAngle [quantityValue]
- * - TopTubeLengthReal [quantityValue]
- * - TopTubeLengthVirtual [quantityValue]
- * - HeadTubeLength [quantityValue]
- * - HeadTubeAngle [quantityValue]
- * - BBDrop [quantityValue]
- * - ChanstayLength [quantityValue]
- * - FronCenterLength [quantityValue]
- * - WeelbaseLength [quantityValue]
- * - Stack [quantityValue]
- * - Reach [quantityValue]
- * - ForkLength [quantityValue]
- * - ForkRakeOffset [quantityValue]
- * - Trial [quantityValue]
+ * - wheel [manyToManyObjectRelation]
+ * - Spacer [quantityValue]
+ * - StemLength [quantityValue]
+ * - HandlebarWidth [quantityValue]
+ * - CrankLength [quantityValue]
+ * - SeatPostDiameter [quantityValue]
+ * - DropperPostTravel [quantityValue]
+ * - SeatPostLength [quantityValue]
+ * - MaximumSeatPostInsertionDepth [quantityValue]
+ * - MinimumSeatPostInsertionDepth [quantityValue]
+ * - DiscSize [inputQuantityValue]
+ * - FrontForkTravel [quantityValue]
+ * - RearSuspensionTravel [quantityValue]
  */
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => 'GEO',
-   'name' => 'Geometria',
+   'id' => 'ERG',
+   'name' => 'Ergonomia',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1715173870,
-   'userOwner' => 1,
+   'modificationDate' => 1715185697,
+   'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
    'implementsInterfaces' => '',
@@ -66,13 +62,13 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'children' =>
     array (
       0 =>
-      Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
-         'name' => 'Layout',
+      Pimcore\Model\DataObject\ClassDefinition\Layout\Region::__set_state(array(
+         'name' => 'Ergonomia',
          'type' => NULL,
          'region' => NULL,
          'title' => '',
-         'width' => NULL,
-         'height' => NULL,
+         'width' => '',
+         'height' => '',
          'collapsible' => false,
          'collapsed' => false,
          'bodyStyle' => '',
@@ -84,10 +80,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Layout',
              'type' => NULL,
-             'region' => NULL,
-             'title' => 'Geometria',
-             'width' => NULL,
-             'height' => NULL,
+             'region' => 'center',
+             'title' => 'Ergonomia',
+             'width' => '',
+             'height' => '',
              'collapsible' => false,
              'collapsed' => false,
              'bodyStyle' => '',
@@ -115,57 +111,18 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'blockedVarsForExport' =>
                 array (
                 ),
-                 'width' => '',
+                 'width' => NULL,
                  'defaultValue' => NULL,
                  'columnLength' => 190,
                  'regex' => '',
                  'regexFlags' =>
                 array (
                 ),
-                 'unique' => false,
+                 'unique' => true,
                  'showCharCount' => false,
                  'defaultValueGenerator' => '',
               )),
               1 =>
-              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
-                 'name' => 'wheel',
-                 'title' => 'Aro',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'fieldtype' => 'manyToManyObjectRelation',
-                 'relationType' => true,
-                 'invisible' => false,
-                 'visibleGridView' => true,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' =>
-                array (
-                ),
-                 'classes' =>
-                array (
-                  0 =>
-                  array (
-                    'classes' => 'Tamanho',
-                  ),
-                ),
-                 'pathFormatterClass' => '@DataDirectorSearchViewPathFormatter',
-                 'width' => '',
-                 'height' => '',
-                 'maxItems' => NULL,
-                 'visibleFields' => 'size',
-                 'allowToCreateNewObject' => false,
-                 'optimizedAdminLoading' => false,
-                 'enableTextSelection' => false,
-                 'visibleFieldDefinitions' =>
-                array (
-                ),
-              )),
-              2 =>
               Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'frameSize',
                  'title' => 'Tamanho do quadro',
@@ -204,10 +161,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 array (
                 ),
               )),
-              3 =>
-              Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
-                 'name' => 'geoImage',
-                 'title' => 'Imagem geometria',
+              2 =>
+              Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
+                 'name' => 'wheel',
+                 'title' => 'Aro',
                  'tooltip' => '',
                  'mandatory' => false,
                  'noteditable' => false,
@@ -216,19 +173,34 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'style' => '',
                  'permissions' => NULL,
                  'datatype' => 'data',
-                 'fieldtype' => 'image',
-                 'relationType' => false,
+                 'fieldtype' => 'manyToManyObjectRelation',
+                 'relationType' => true,
                  'invisible' => false,
-                 'visibleGridView' => false,
+                 'visibleGridView' => true,
                  'visibleSearch' => false,
                  'blockedVarsForExport' =>
                 array (
                 ),
+                 'classes' =>
+                array (
+                  0 =>
+                  array (
+                    'classes' => 'Tamanho',
+                  ),
+                ),
+                 'pathFormatterClass' => '@DataDirectorSearchViewPathFormatter',
                  'width' => '',
                  'height' => '',
-                 'uploadPath' => '',
+                 'maxItems' => NULL,
+                 'visibleFields' => 'size',
+                 'allowToCreateNewObject' => false,
+                 'optimizedAdminLoading' => false,
+                 'enableTextSelection' => true,
+                 'visibleFieldDefinitions' =>
+                array (
+                ),
               )),
-              4 =>
+              3 =>
               Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldset::__set_state(array(
                  'name' => 'Layout',
                  'type' => NULL,
@@ -245,8 +217,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                 array (
                   0 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'SeatTube',
-                     'title' => 'SeatTube Length',
+                     'name' => 'Spacer',
+                     'title' => 'Espaçador',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -283,8 +255,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   1 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'SeatTubeAngle',
-                     'title' => 'SeatTube Angle',
+                     'name' => 'StemLength',
+                     'title' => 'Comprimento do suporte de gidão',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -304,10 +276,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'width' => '',
                      'unitWidth' => '',
                      'defaultValue' => NULL,
-                     'defaultUnit' => '6',
+                     'defaultUnit' => '3',
                      'validUnits' =>
                     array (
-                      0 => '6',
+                      0 => '3',
                     ),
                      'integer' => false,
                      'unsigned' => false,
@@ -321,8 +293,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   2 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'TopTubeLengthReal',
-                     'title' => 'TopTube Length(Real)',
+                     'name' => 'HandlebarWidth',
+                     'title' => 'Comprimento do guidão',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -360,8 +332,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   3 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'TopTubeLengthVirtual',
-                     'title' => 'TopTube Length(Virtual)',
+                     'name' => 'CrankLength',
+                     'title' => 'Comprimento pedivela',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -399,8 +371,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   4 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'HeadTubeLength',
-                     'title' => 'HeadTube Length',
+                     'name' => 'SeatPostDiameter',
+                     'title' => 'Diâmetro do canote',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -424,7 +396,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'validUnits' =>
                     array (
                       0 => '3',
-                      1 => '2',
                     ),
                      'integer' => false,
                      'unsigned' => false,
@@ -438,8 +409,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   5 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'HeadTubeAngle',
-                     'title' => 'HeadTube Angle',
+                     'name' => 'DropperPostTravel',
+                     'title' => 'Curso canote retrátil',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -459,10 +430,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'width' => '',
                      'unitWidth' => '',
                      'defaultValue' => NULL,
-                     'defaultUnit' => '6',
+                     'defaultUnit' => '3',
                      'validUnits' =>
                     array (
-                      0 => '6',
+                      0 => '3',
                     ),
                      'integer' => false,
                      'unsigned' => false,
@@ -476,8 +447,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   6 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'BBDrop',
-                     'title' => 'BB Drop',
+                     'name' => 'SeatPostLength',
+                     'title' => 'Comprimento do canote',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -515,8 +486,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   7 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'ChanstayLength',
-                     'title' => 'Chanstay Length',
+                     'name' => 'MaximumSeatPostInsertionDepth',
+                     'title' => 'Inserção máxima do canote',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -554,8 +525,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   8 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'FronCenterLength',
-                     'title' => 'FronCenterLength',
+                     'name' => 'MinimumSeatPostInsertionDepth',
+                     'title' => 'Inserção mínima do canote',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -592,10 +563,10 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'defaultValueGenerator' => '',
                   )),
                   9 =>
-                  Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'WeelbaseLength',
-                     'title' => 'WeelbaseLength',
-                     'tooltip' => '',
+                  Pimcore\Model\DataObject\ClassDefinition\Data\InputQuantityValue::__set_state(array(
+                     'name' => 'DiscSize',
+                     'title' => 'Tamanho do disco',
+                     'tooltip' => 'Dianteiro/Traseiro',
                      'mandatory' => false,
                      'noteditable' => false,
                      'index' => false,
@@ -603,7 +574,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'style' => '',
                      'permissions' => NULL,
                      'datatype' => 'data',
-                     'fieldtype' => 'quantityValue',
+                     'fieldtype' => 'inputQuantityValue',
                      'relationType' => false,
                      'invisible' => false,
                      'visibleGridView' => false,
@@ -612,7 +583,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                     array (
                     ),
                      'width' => '',
-                     'unitWidth' => '',
+                     'unitWidth' => NULL,
                      'defaultValue' => NULL,
                      'defaultUnit' => '3',
                      'validUnits' =>
@@ -632,8 +603,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   10 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'Stack',
-                     'title' => 'Stack',
+                     'name' => 'FrontForkTravel',
+                     'title' => 'Curso dianteiro',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -657,7 +628,6 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'validUnits' =>
                     array (
                       0 => '3',
-                      1 => '2',
                     ),
                      'integer' => false,
                      'unsigned' => false,
@@ -671,125 +641,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                   11 =>
                   Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'Reach',
-                     'title' => 'Reach',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'datatype' => 'data',
-                     'fieldtype' => 'quantityValue',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => false,
-                     'blockedVarsForExport' =>
-                    array (
-                    ),
-                     'width' => '',
-                     'unitWidth' => '',
-                     'defaultValue' => NULL,
-                     'defaultUnit' => '3',
-                     'validUnits' =>
-                    array (
-                      0 => '2',
-                      1 => '3',
-                    ),
-                     'integer' => false,
-                     'unsigned' => false,
-                     'minValue' => NULL,
-                     'maxValue' => NULL,
-                     'unique' => false,
-                     'decimalSize' => NULL,
-                     'decimalPrecision' => NULL,
-                     'autoConvert' => false,
-                     'defaultValueGenerator' => '',
-                  )),
-                  12 =>
-                  Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'ForkLength',
-                     'title' => 'Fork Length',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'datatype' => 'data',
-                     'fieldtype' => 'quantityValue',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => false,
-                     'blockedVarsForExport' =>
-                    array (
-                    ),
-                     'width' => '',
-                     'unitWidth' => '',
-                     'defaultValue' => NULL,
-                     'defaultUnit' => '3',
-                     'validUnits' =>
-                    array (
-                      0 => '2',
-                      1 => '3',
-                    ),
-                     'integer' => false,
-                     'unsigned' => false,
-                     'minValue' => NULL,
-                     'maxValue' => NULL,
-                     'unique' => false,
-                     'decimalSize' => NULL,
-                     'decimalPrecision' => NULL,
-                     'autoConvert' => false,
-                     'defaultValueGenerator' => '',
-                  )),
-                  13 =>
-                  Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'ForkRakeOffset',
-                     'title' => 'Fork Rake/Offset',
-                     'tooltip' => '',
-                     'mandatory' => false,
-                     'noteditable' => false,
-                     'index' => false,
-                     'locked' => false,
-                     'style' => '',
-                     'permissions' => NULL,
-                     'datatype' => 'data',
-                     'fieldtype' => 'quantityValue',
-                     'relationType' => false,
-                     'invisible' => false,
-                     'visibleGridView' => false,
-                     'visibleSearch' => false,
-                     'blockedVarsForExport' =>
-                    array (
-                    ),
-                     'width' => '',
-                     'unitWidth' => '',
-                     'defaultValue' => NULL,
-                     'defaultUnit' => '3',
-                     'validUnits' =>
-                    array (
-                      0 => '2',
-                      1 => '3',
-                    ),
-                     'integer' => false,
-                     'unsigned' => false,
-                     'minValue' => NULL,
-                     'maxValue' => NULL,
-                     'unique' => false,
-                     'decimalSize' => NULL,
-                     'decimalPrecision' => NULL,
-                     'autoConvert' => false,
-                     'defaultValueGenerator' => '',
-                  )),
-                  14 =>
-                  Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
-                     'name' => 'Trial',
-                     'title' => 'Trial',
+                     'name' => 'RearSuspensionTravel',
+                     'title' => 'Curso suspensão traseira',
                      'tooltip' => '',
                      'mandatory' => false,
                      'noteditable' => false,
@@ -842,7 +695,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'fieldtype' => 'panel',
              'layout' => NULL,
              'border' => false,
-             'icon' => NULL,
+             'icon' => '',
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
@@ -851,9 +704,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'blockedVarsForExport' =>
         array (
         ),
-         'fieldtype' => 'tabpanel',
-         'border' => false,
-         'tabPosition' => NULL,
+         'fieldtype' => 'region',
+         'icon' => '',
       )),
     ),
      'locked' => false,
@@ -867,7 +719,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'labelWidth' => 100,
      'labelAlign' => 'left',
   )),
-   'icon' => '/bundles/pimcoreadmin/img/twemoji/1f4d0.svg',
+   'icon' => '/bundles/pimcoreadmin/img/flat-color-icons/negative_dynamic.svg',
    'previewUrl' => '',
    'group' => 'Produtos',
    'showAppLoggerTab' => false,
@@ -876,7 +728,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'compositeIndices' =>
   array (
   ),
-   'generateTypeDeclarations' => false,
+   'generateTypeDeclarations' => true,
    'showFieldLookup' => false,
    'propertyVisibility' =>
   array (

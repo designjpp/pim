@@ -21,7 +21,7 @@
 .footer-text-placeholder-left:after,
 .toc-footer-text-placeholder-left:after {
     content: counter(page);
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 900;
     padding-left: 3mm;
 }
@@ -34,7 +34,7 @@
 .footer-text-placeholder-right:before,
 .toc-footer-text-placeholder-right:before {
     content: counter(page);
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 900;
     padding-right: 3mm;
 }
@@ -149,7 +149,7 @@
 
 .register {
     font-size: 12pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 700;
     color: #ffffff;
     /*letter-spacing: 40;*/
@@ -300,7 +300,7 @@
 }
 
 body {
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-size: 10pt;
 }
 
@@ -310,7 +310,7 @@ body {
 
 .site h1,
 .site .headline {
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 700;
     line-height: 120%;
     font-size: 16pt;
@@ -321,14 +321,14 @@ body {
 }
 
 .site h2 {
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 600;
     line-height: 120%;
     font-size: 14pt;
 }
 
 .site h3 {
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 300;
     line-height: 120%;
     font-size: 12pt;
@@ -410,7 +410,7 @@ body {
 .pimcore_area_print-product-row h4 {
     display: inline;
     font-size: 13pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -433,13 +433,13 @@ body {
 .pimcore_area_print-product-row .infoblock {
     margin: 3mm 0 5mm;
     font-size: 8pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 300;
     width: 45mm;
 }
 
 .pimcore_area_print-product-row .infoblock label {
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 600;
     font-size: 8pt;
 }
@@ -524,7 +524,7 @@ body {
 .pimcore_area_print-title-page .heading {
     position: absolute;
     bottom: 50mm;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     /*margin: 0 45mm;*/
     font-size: 40pt;
@@ -539,7 +539,7 @@ body {
     position: absolute;
     bottom: 45mm;
     color: #ffffff;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 14pt;
     text-transform: uppercase;
@@ -576,7 +576,7 @@ body {
 #toc-wrapper .toc.ro-toc .ro-toc-level-1 {
     padding-top: 2mm;
     font-size: 12pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 600;
     padding-left: 0;
 }
@@ -585,7 +585,7 @@ body {
     padding-right: 0.5mm;
     padding-top: 1mm;
     font-size: 10pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 400;
 }
 #toc-wrapper .toc.ro-toc .ro-toc-level-3 {
@@ -593,7 +593,7 @@ body {
     padding-top: 1mm;
     padding-right: 0.5mm;
     font-size: 10pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 300;
 }
 
@@ -617,7 +617,7 @@ body {
 }
 
 .pimcore_area_print-product-table .outputchannel thead {
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 600;
 }
 
@@ -631,7 +631,7 @@ body {
     padding: 0 2mm 1mm 2mm;
     vertical-align: bottom;
     font-size: 9pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 600;
 }
 
@@ -659,13 +659,13 @@ body {
     padding: 2mm 2mm 2mm 2mm;
     vertical-align: top;
     font-size: 9pt;
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 300;
 }
 
 .pimcore_area_print-product-table .outputchannel tbody td:first-child,
 .pimcore_area_print-product-table .outputchannel tbody td:last-child {
-    font-family: "Hind Guntur", sans-serif;
+    font-family: "Montserrat",  sans-serif;
     font-weight: 600;
 }
 
